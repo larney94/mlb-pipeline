@@ -1,0 +1,149 @@
+MLB Player-Performance Prediction Pipeline – Global Design Specification
+
+1. Module-by-Module Design Map (A → L)
+
+Legend
+	•	CLI flags: only those added/required beyond global --config, --log-level, --overwrite-policy, --set
+	•	Log file: every module uses utils.logging_utils.get_rotating_logger(name, dir, level, max_bytes, backup_count) – output goes to cfg["logging"]["dir"].
+	•	Schema validation: all data outputs are checked with Pydantic v2 models (field aliasing via @field_validator).
+
+Id	Script name	Purpose	Inputs	Outputs	Required Config keys	Extra CLI flags	Notes / Fixed Bugs
+A	module_a.py	Fetch historical season-level player gamelogs via pybaseball; idempotent per–season download.	cfg.outputs.gamelogs_dir, cfg.seasons, PyBaseball API	mlb_all_batting_gamelogs_<YEAR>.csv, mlb_all_pitching_gamelogs_<YEAR>.csv	seasons, outputs.gamelogs_dir, pybaseball_timeout, overwrite_policy	--season	Renamed from fetch_mlb_gamelogs.py – fixes naming mismatch filecite85; unify logger path filecite8497
+A2	module_a2.py	Fetch most-recent daily gamelogs via MLB StatsAPI and append to season CSVs.	Same dir as A, statsapi.*, optional date range from CLI.	Updates existing season CSVs.	statsapi.timeout, statsapi.max_retries, statsapi.retry_delay, outputs.gamelogs_dir	--date, --start-date, --end-date	Added date-range flags to honour shell-script args filecite8497; duplicate-append guard added filecite82
+B	module_b.py	Download static CSV look-ups (park factors, team info…). Atomic writes.	cfg.static_csvs[*].url, outputs.static_dir	Named CSVs in static dir	outputs.static_dir, static_csvs[], overwrite_policy	–	Placeholder URLs removed; overwrite/skip logic added filecite82
+C	module_c.py	Generate context/park features from static CSVs.	Static CSVs, outputs.static_dir	mlb_context_features.parquet	outputs.context_dir, outputs.static_dir	–	Reads filenames dynamically; validates schema filecite82
+D	module_d.py	Merge gamelogs + context; add rolling aggregates.	A/A2 & C outputs	mlb_master_dataset.parquet	outputs.merged_dir, rolling windows list	–	Rolling window params now configurable; logging unified filecite86
+E	module_e.py	Fetch daily probable starters / line-ups (StatsAPI).	StatsAPI; outputs.starters_dir	starters_<DATE>.parquet	outputs.starters_dir, statsapi.*	--date	
+F	module_f.py	Filter master dataset for modelling (min PA, date cut-offs, join starters).	D & E outputs	filtered_dataset.parquet	outputs.filtered_dir, filter.*	–	Config keys unified (filtered_dir replaces filtered_data_dir) filecite84
+G	module_g.py	Run trained ML model; output numeric predictions.	F output, model pickle	preds_<MODEL>_<DATE>.parquet	outputs.model_outputs_dir, model.*	--model-path	Ensures deterministic random-state; Pydantic output schema.
+H	module_h.py	Combine/ensemble multiple prediction files.	G outputs	combined_predictions_<DATE>.parquet	outputs.model_outputs_dir, outputs.combined_preds_dir, ensemble_method	–	Nested predictions: section flattened; uses unified keys filecite84
+I	module_i.py	Evaluate predictions vs actuals (run next-day).	H output, actual box scores	evaluation_metrics_<DATE>.json	outputs.tests_dir, outputs.combined_preds_dir, outputs.filtered_dir	–	Moved from tests/ & renamed; skips gracefully if actuals unavailable filecite84
+K	module_k.py	Pull “true” (vig-free) Pinnacle prop lines with backup fail-over.	Pinnacle API, backups	true_lines_<DATE>.csv	true_line_sources.primary, .backup, outputs.dir	–	File renamed from fetch_true_lines_pinnacle_api.py; alias comment cleaned filecite85
+L	module_l.py	Query local LLM for narrative + numeric predictions; merge with H & K.	Combined preds, true lines, llm.*	llm_predictions_<DATE>.csv, explanations_<DATE>.md	llm.model, llm.endpoint, llm.prompt_template, outputs.dir	--dry-run	--dry-run flag wired end-to-end (shell → CLI → env) filecite8497
+
+All modules obey global --overwrite-policy [skip|overwrite|append]; idempotency rules documented below.
+
+⸻
+
+2. Global config.yaml – Canonical Schema
+
+# ---------------------- Pipeline orchestration ----------------------
+pipeline:
+  module_sequence: [A, A2, B, C, D, E, F, G, H, I, K, L]
+  concurrency: 1            # int >0 – parallel workers for independent stages
+  continue_on_failure: false
+
+# ---------------------- Output directories -------------------------
+outputs:
+  gamelogs_dir:        "outputs/gamelogs"
+  static_dir:          "outputs/static_data"
+  context_dir:         "outputs/context_features"
+  merged_dir:          "outputs/merged_data"
+  starters_dir:        "outputs/starters"
+  filtered_dir:        "outputs/filtered_data"
+  model_outputs_dir:   "outputs/model_preds"
+  combined_preds_dir:  "outputs/predictions"
+  tests_dir:           "outputs/evaluation"     # for Module I
+  dir:                 "outputs"                # base for K & L final artefacts
+
+# ---------------------- Logging ------------------------------------
+logging:
+  dir: "logs"
+  level: "INFO"             # DEBUG/INFO/WARN/ERROR
+  max_bytes: 10_000_000     # 10 MB per file
+  backup_count: 3
+
+# ---------------------- Data fetch / API ---------------------------
+seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+pybaseball_timeout: 30           # seconds
+statsapi:
+  timeout: 15
+  max_retries: 3
+  retry_delay: 2                # seconds
+
+static_csvs:
+  - name: parks.csv
+    url: <FILL-IN-REAL-URL>
+  - name: teams.csv
+    url: <FILL-IN-REAL-URL>
+
+true_line_sources:
+  primary: "https://api.pinnacle.com/..."
+  backup:  "https://backup-source.com/..."
+
+# ---------------------- Model / Ensemble ---------------------------
+model:
+  path: "models/mlb_model.pkl"
+  version: "v1.0"
+ensemble_method: "mean"         # or "weighted"
+
+# ---------------------- LLM settings -------------------------------
+llm:
+  model: "ollama/openhermes"
+  endpoint: "http://localhost:11434/v1/chat/completions"
+  temperature: 0.2
+  max_tokens: 128
+  prompt_template: |
+    You are a baseball analyst...
+
+# ---------------------- Filters ------------------------------------
+filter:
+  min_pa: 100
+  min_games: 30
+  date_range_days: 730          # last two seasons
+
+overwrite_policy: "skip"        # global default
+
+Validation rules (pipeline start-up):
+	•	Every outputs.*_dir must exist or be creatable.
+	•	module_sequence must include contiguous dependency order A-L (I optional).
+	•	overwrite_policy ∈ {skip, overwrite, append, refresh}.
+
+⸻
+
+3. Pipeline Flow Summary
+
+Order	Module	Consumes	Produces	Down-stream consumer
+1	A	seasons list	Season CSVs	D
+2	A2	A outputs (append)	Updated CSVs	D
+3	B	static_csvs	Static CSVs	C
+4	C	Static CSVs	Context Parquet	D
+5	D	A/A2 + C	Master Parquet	F
+6	E	StatsAPI	Starters Parquet	F
+7	F	D + E	Filtered Parquet	G
+8	G	Filtered Parquet + model	Raw preds	H
+9	H	Raw preds	Combined preds	I, L
+10	I*	Combined preds + actuals	Metrics JSON	–
+11	K	Pinnacle API	True lines CSV	L
+12	L	Combined preds + true lines + LLM	Final CSV + md	–
+
+* Module I runs conditionally (skip if actuals for the day unavailable).
+
+Visual DAG: A → A2 → (B → C) → D → (E) → F → G → H → {I?, K} → L
+
+⸻
+
+4. Rationale & Fix Appendix
+
+Ref #	Issue / Decision	Source Evidence
+4-1	Rename all module files to module_<letter>.py for orchestrator import parity.	filecite85
+4-2	Complete config.yaml with pipeline, outputs, logging, and module params.	filecite84
+4-3	Added --start-date/--end-date/--dry-run CLI support & propagation.	filecite8497
+4-4	Relocated evaluation script to module_i.py; removed tests/ collision.	filecite84
+4-5	Unified logging through get_rotating_logger; set size/rotation via config.	filecite84
+4-6	Harmonised key names (filtered_dir, combined_preds_dir etc.).	filecite84
+4-7	Ensured Pydantic v2 compliance across all models.	filecite84
+4-8	Overwrite/idempotency rules clarified; append reserved for incremental modules.	filecite84
+4-9	Removed unused artefacts (global_conventions.py, stale backups) for clarity.	filecite84
+
+
+⸻
+
+Verification Checklist
+	•	Module specs include role, I/O, config, CLI, logging, fixes.
+	•	Config schema enumerates every required key + defaults.
+	•	Logging standardised; size & rotation configurable.
+	•	Sequencing matches DAG and module_sequence default.
+	•	Edge-cases (date range, dry-run, duplicate outputs) documented.
+
+Confidence: High – all design elements cross-checked against audit, debug & rebuild reports; uncertainty limited to user-provided URLs for static CSVs (flagged as placeholders).

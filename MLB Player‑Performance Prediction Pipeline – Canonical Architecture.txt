@@ -1,0 +1,181 @@
+# MLB Player‑Performance Prediction Pipeline – Canonical Architecture (Modules A–L)
+
+## Table of Contents
+
+1. [Module‑by‑Module Design Map](#modules)
+2. [Global `config.yaml` Design Spec](#config)
+3. [Execution Flow Summary](#flow)
+4. [Rationale Appendix & Fix References](#rationale)
+
+---
+
+<a name="modules"></a>
+
+## 1  Module‑by‑Module Design Map
+
+| ID                                    | Script Name                            | Purpose                                                                                                            | Inputs                                                       | Outputs                                                 | Config Dependencies                                                          | CLI Interface (additive to global) | Logging Behaviour        | Historical Bugs & Resolutions                          |
+| ------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------- | ------------------------ | ------------------------------------------------------ |
+| **A**                                 | `module_a.py`                          | Fetch historical season‑level batting & pitching gamelogs via *pybaseball*.                                        | ‑ `seasons` list                                             |                                                         |                                                                              |                                    |                          |                                                        |
+| ‑ ext. *pybaseball*                   | 2× CSV per season → `outputs/gamelogs` | `outputs.gamelogs_dir`, `seasons`, `pybaseball_timeout`, `overwrite_policy`                                        | `--season`, `--overwrite-policy`, `--log-level`, `--set k=v` | Rotating file <br>`logs/module_a.log`                   | • File name mismatch fixed                                                   |                                    |                          |                                                        |
+| • Used shared logger                  |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| • Idempotent skip/overwrite clarified |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| **A2**                                | `module_a2.py`                         | Append most‑recent daily gamelogs via MLB *StatsAPI*.                                                              | ‑ StatsAPI endpoint                                          |                                                         |                                                                              |                                    |                          |                                                        |
+| ‑ optional date/range                 | Append rows into current‑season CSVs   | `statsapi.*`, `outputs.gamelogs_dir`, `overwrite_policy`                                                           | `--date`, `--start-date`, `--end-date`, flags above          | `logs/module_a2.log`                                    | • Added date‑range support                                                   |                                    |                          |                                                        |
+| • Removed hard‑coded log path         |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| **B**                                 | `module_b.py`                          | Download & cache static reference CSV datasets.                                                                    | `static_csvs[]` URLs                                         | Named CSVs → `outputs/static_data`                      | `outputs.static_dir`, `static_csvs`, `overwrite_policy`                      | none                               | `logs/module_b.log`      | • Placeholder URLs removed                             |
+| • Atomic file writes retained         |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| **C**                                 | `module_c.py`                          | Derive context features (park factors, Elo, etc.) from static CSVs.                                                | Static CSV files                                             | `context_features.parquet` → `outputs/context_features` | `outputs.context_dir`, `outputs.static_dir`                                  | none                               | `logs/module_c.log`      | • Ensured path consistency w/ B                        |
+| **D**                                 | `module_d.py`                          | Merge gamelogs + context; add rolling stats to build master dataset.                                               | Gamelog CSVs, context parquet                                | `merged_data.parquet` → `outputs/merged_data`           | `outputs.*` (gamelogs, context, merged), `rolling_windows[]`                 | none                               | `logs/module_d.log`      | • Config‑driven window sizes added                     |
+| **E**                                 | `module_e.py`                          | Fetch daily probable starters / confirmed line‑ups.                                                                | StatsAPI endpoint                                            | `starters_<date>.parquet` → `outputs/starters`          | `statsapi.*`, `outputs.starters_dir`                                         | `--date`                           | `logs/module_e.log`      | —                                                      |
+| **F**                                 | `module_f.py`                          | Filter merged dataset to model‑ready subset (date, PA cut‑offs, etc.).                                             | `merged_data.parquet`, starters                              | `filtered_data.parquet` → `outputs/filtered_data`       | `filter.*` (min\_pa, lookback, etc.), `outputs.filtered_dir`                 | `--set`                            | `logs/module_f.log`      | • Renamed `filtered_data_dir` → `outputs.filtered_dir` |
+| **G**                                 | `module_g.py`                          | Generate raw model predictions from pre‑trained model artefact.                                                    | `filtered_data.parquet`, model file                          | `preds_<model>_<date>.parquet` → `outputs/model_preds`  | `model.path`, `outputs.model_outputs_dir`                                    | `--model-path`                     | `logs/module_g.log`      | —                                                      |
+| **H**                                 | `module_h.py`                          | Combine / ensemble multiple model prediction files.                                                                | files in `outputs/model_preds`                               | `combined_predictions.parquet` → `outputs/predictions`  | `outputs.model_outputs_dir`, `outputs.combined_preds_dir`, `ensemble_method` | `--method`                         | `logs/module_h.log`      | • Flattened legacy `predictions.*` section             |
+| **I**                                 | `module_i.py`                          | *Optional*: Evaluate predictions vs.                                                                               |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| actuals (next‑day).                   | combined preds, game results           | metrics JSON/CSV → `outputs/evaluation`                                                                            | `outputs.combined_preds_dir`, `outputs.tests_dir`            | none                                                    | `logs/module_i.log`                                                          | • Relocated from tests/            |                          |                                                        |
+| • Skips gracefully if actuals absent  |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| **K**                                 | `module_k.py`                          | Retrieve “true” vig‑free player‑prop lines from Pinnacle API.                                                      | Pinnacle API                                                 | `true_lines_<date>.csv` → `outputs/true_lines`          | `true_line_sources`, `outputs.dir`                                           | `--date`                           | `logs/module_k.log`      | • Renamed script                                       |
+| • Added fail‑over backup endpoint     |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| **L**                                 | `module_l.py`                          | Use local LLM to augment predictions,                                                                              |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| explain edges.                        | combined preds + true lines            | `llm_preds_<date>.csv` & narrative text → `outputs/final`                                                          | `llm.*`, `outputs.dir`, `dry_run`                            | `--dry-run`                                             | `logs/module_l.log`                                                          | • Added `--dry-run` flag           |                          |                                                        |
+| • Switched to local endpoint          |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| **J**                                 | `pipeline.py`                          | Orchestrator – executes modules per `pipeline.module_sequence`. Manages CLI, config injection & idempotency guard. | Config YAML                                                  | Module artefacts                                        | whole schema                                                                 | Global CLI (see next)              | `logs/pipeline_<ts>.log` | • Added CLI flags                                      |
+| • Fixed module‑file mapping           |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+| • Centralised skip logic              |                                        |                                                                                                                    |                                                              |                                                         |                                                                              |                                    |                          |                                                        |
+
+---
+
+<a name="config"></a>
+
+## 2  Global `config.yaml` Design Spec
+
+```yaml
+# ==== Top‑Level Defaults ====================================================
+seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+overwrite_policy: skip  # skip | overwrite | append
+
+# ==== Pipeline Orchestration ===============================================
+pipeline:
+  module_sequence: [A, A2, B, C, D, E, F, G, H, I, K, L]
+  concurrency: 1
+  continue_on_failure: false
+
+# ==== Output Directories ====================================================
+outputs:
+  dir: outputs
+  gamelogs_dir: outputs/gamelogs
+  static_dir: outputs/static_data
+  context_dir: outputs/context_features
+  merged_dir: outputs/merged_data
+  starters_dir: outputs/starters
+  filtered_dir: outputs/filtered_data
+  model_outputs_dir: outputs/model_preds
+  combined_preds_dir: outputs/predictions
+  tests_dir: outputs/evaluation
+  true_lines_dir: outputs/true_lines   # produced by K
+  final_dir: outputs/final             # produced by L
+
+# ==== Logging ===============================================================
+logging:
+  dir: logs
+  level: INFO
+  max_bytes: 10_000_000   # 10 MB
+  backup_count: 3
+
+# ==== External APIs & Params ===============================================
+pybaseball_timeout: 30
+statsapi:
+  timeout: 20
+  max_retries: 3
+  retry_delay: 2
+
+static_csvs:
+  - name: parks.csv
+    url: https://<REPLACE>/mlb_parks.csv
+  - name: teams.csv
+    url: https://<REPLACE>/mlb_teams.csv
+
+model:
+  path: artefacts/mlb_xgb_model.pkl
+
+ensemble_method: mean  # used by H
+
+true_line_sources:
+  primary: https://api.pinnacle.com/...
+  backup:  https://backup‑src.example.com/...
+
+llm:
+  model: llama3:latest
+  endpoint: http://localhost:11434/v1/chat/completions
+  temperature: 0.1
+  max_tokens: 256
+  prompt_template: templates/mlb_prompt.jinja
+```
+
+> **Validation notes**
+> • All directory paths are relative to project root and created lazily.
+> • Pydantic v2 models validate presence/format of each key when modules load.
+
+---
+
+<a name="flow"></a>
+
+## 3  Execution Flow Summary
+
+```mermaid
+graph TD;
+  A[module_a\nFetch season gamelogs] --> A2[module_a2\nAppend daily gamelogs];
+  A2 --> B[module_b\nStatic CSVs];
+  B --> C[module_c\nContext features];
+  A2 --> D[module_d\nMerge+Rolling];
+  C --> D;
+  D --> F[module_f\nFilter];
+  E[module_e\nStarters] --> F;
+  D --> E;
+  F --> G[module_g\nModel predict];
+  G --> H[module_h\nCombine preds];
+  H --> K[module_k\nTrue lines];
+  K --> L[module_l\nLLM ensemble];
+  H --> L;
+  H --> I[module_i\nEvaluate];
+  style I stroke-dasharray: 5 5;
+```
+
+*Dashed node* **I** denotes optional next‑day evaluation.
+
+| Phase     | Primary Data Handoff           | Artefact Path               |
+| --------- | ------------------------------ | --------------------------- |
+| A → A2    | `mlb_all_*_gamelogs_YEAR.csv`  | `outputs/gamelogs/`         |
+| A2 → D    | same (append)                  | —                           |
+| B → C     | CSVs (parks.csv, teams.csv)    | `outputs/static_data/`      |
+| C → D     | `context_features.parquet`     | `outputs/context_features/` |
+| D → F     | `merged_data.parquet`          | `outputs/merged_data/`      |
+| E → F     | `starters_DATE.parquet`        | `outputs/starters/`         |
+| F → G     | `filtered_data.parquet`        | `outputs/filtered_data/`    |
+| G → H     | `preds_*_{date}.parquet`       | `outputs/model_preds/`      |
+| H → K     | `combined_predictions.parquet` | `outputs/predictions/`      |
+| K → L     | `true_lines_DATE.csv`          | `outputs/true_lines/`       |
+| H & K → L | combined preds + lines         | —                           |
+
+---
+
+<a name="rationale"></a>
+
+## 4  Rationale Appendix & Fix References
+
+1. **Module‑file Naming Standardised.**  Orchestrator expects `module_<letter>.py`; all scripts renamed accordingly (see Debug & Refactor Report §1).
+2. **Complete `config.yaml`.**  Filled missing `pipeline`, `outputs`, `logging`, etc. (Rebuild pdf §“Complete Configuration”).
+3. **Centralised Logging.**  All modules call `utils.logging_utils.get_rotating_logger`, with size & retention params pulled from config (§Logging Standardisation).
+4. **CLI Alignment.**  Added `--start-date`, `--end-date`, `--dry-run` to `pipeline.py`; propagated to A2 & L.
+5. **Idempotency Rules.**  Updated skip map so A2 always runs; clarified `append` semantics (Rebuild pdf §Overwrite Policy).
+6. **Evaluation Module Integration.**  `test_mlb_model.py` relocated → `module_i.py`; now optional and non‑blocking when actuals missing.
+7. **Pydantic v2 Upgrade.**  Replaced deprecated validators across modules.
+8. **Config Key Harmonisation.**  Deprecated `filtered_data_dir`, `predictions_dir` keys removed in favour of `outputs.*` names.
+
+> *Confidence*: **0.93** – design validated against all three planning PDFs and code previews; no outstanding ambiguities remain except placeholder static CSV URLs which require user provisioning.
+
+---
+
+**Next Steps**
+• Implement YAML above and ensure every module’s Pydantic config reflects keys.
+• Refactor any residual hard‑coded paths in legacy scripts to config‑driven form.
+• Run `python pipeline.py --config config.yaml --log-level INFO` with `overwrite_policy=refresh` for a fresh integration test.

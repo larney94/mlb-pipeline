@@ -1,0 +1,113 @@
+
+
+## 🧠 **MLB Pipeline – Global Design Strategy Creation Prompt (Deep Research Mode)**
+
+> You are a world-class Python systems architect, ML pipeline engineer, and project design strategist.
+> I have uploaded a complete multi-module MLB player-performance prediction pipeline in ZIP format along with three exhaustive planning PDFs:
+>
+> 1. `MLB Pipeline.zip` – The original full project codebase
+> 2. `MLB Player-Performance Pipeline – Code Audit and Debug Strategy.pdf` – Architecture and execution blueprint
+> 3. `MLB Pipeline Debug & Refactor Report.pdf` – Full list of known bugs, config mismatches, naming drifts, and all required changes
+> 4. `MLB Player-Performance Pipeline Rebuild.pdf` – Canonical plan for QA, harmonization, and rollout
+
+---
+
+## 🎯 **YOUR OBJECTIVE**
+
+Design the **perfect, end-to-end global architecture** for this MLB pipeline, using the uploaded files as your only source of truth. Your final design must:
+
+* Fully represent all **modules A–L**, their CLI structure, I/O, dependencies, logging behaviors, and config keys
+* Comply strictly with all conventions, fixes, renaming standards, and logging policies in the PDF docs
+* Be delivered as a **comprehensive, validated, lossless map** of the final pipeline we are building
+* Be usable as the **canonical scaffold** for rebuilding, testing, and extending each module with zero ambiguity
+
+---
+
+## 🧪 **PROCESS STANDARDS (MANDATORY)**
+
+You must approach this task with **extreme attention to detail, rigorous analytical thinking, and meticulous verification** at every step. Adhere to the following rigor framework:
+
+---
+
+### ⚙️ 1. **Explicit Step-by-Step Reasoning**
+
+* Clearly articulate each architectural decision and design pattern.
+* For every module, justify structure, logic, config keys, I/O formats, and naming choices.
+
+---
+
+### 🔁 2. **Continuous Internal Validation**
+
+* Cross-check all module interdependencies against actual code and config.
+* Ensure naming consistency across every module, CLI interface, and output folder.
+* Confirm config schema compliance and idempotency expectations line-by-line.
+
+---
+
+### ⚠️ 3. **Proactive Error Prevention**
+
+* Anticipate and document potential edge cases, race conditions, or path mismatches.
+* Propose how to future-proof the design for testability, reproducibility, and scalability.
+
+---
+
+### 🔍 4. **Comprehensive Cross-Verification**
+
+* Cross-validate all design logic against each of the three PDF documents.
+* Ensure **module-to-module flow** mirrors the intended pipeline execution sequence:
+  `A → A2 → B → C → D → E → F → G → H → K → L`
+
+---
+
+### ❗ 5. **Transparency of Uncertainty**
+
+* Flag any ambiguities in source materials, config schema, or data expectations.
+* Provide a structured proposal for resolving them with options clearly labeled.
+
+---
+
+### ✅ 6. **Structured Verification Summary**
+
+Conclude with a final checklist that confirms:
+
+* [ ] Each module's role, inputs, outputs, and dependencies
+* [ ] Config schema and CLI flag correctness
+* [ ] Logging standardization and test readiness
+* [ ] Sequencing correctness across the orchestrator
+* [ ] Confidence level in the final proposed architecture
+
+---
+
+## 📦 **DELIVERABLES**
+
+You must produce:
+
+1. A **module-by-module design map** (for Modules A–L) including:
+
+   * Purpose
+   * Inputs / outputs
+   * Config dependencies
+   * Required CLI interface
+   * Required logging behavior
+   * Known bugs (from PDFs) and resolved fixes
+
+2. A **global config.yaml design spec**, including:
+
+   * All required keys grouped by section
+   * Defaults, validation constraints, and how each module consumes the config
+
+3. A **flow diagram summary** or formatted table showing the full execution order, data handoffs, and logical sequencing of steps.
+
+4. A **rationale appendix** with references to each fix, convention, or naming rule you enforced (from the PDFs or original code).
+
+---
+
+## 📢 CRITICAL RULES
+
+* **Do NOT hallucinate or guess** – use only the ZIP and the PDFs
+* **Do NOT summarize prematurely**
+* **Do NOT skip over config, logging, or edge case issues**
+* Your design must be **directly runnable** if implemented as written
+
+---
+

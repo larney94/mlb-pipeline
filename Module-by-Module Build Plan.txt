@@ -1,0 +1,314 @@
+✅ Deep Research Plan Initiated — Parsing All Reference Architecture Files…
+
+🧱 Module-by-Module Build Plan
+
+Module A — module_a.py
+	•	✅ File name: module_a.py
+	•	🎯 Purpose: Retrieve full-season batting & pitching gamelogs for each year in cfg["seasons"], harmonize column names, and write CSVs .
+	•	🔗 Inputs/Config: Calls external pybaseball library; requires config keys: seasons, gamelogs_dir, pybaseball_timeout  (e.g. list of years to fetch).
+	•	📤 Outputs: Two CSVs per season: mlb_all_batting_gamelogs_<YEAR>.csv and mlb_all_pitching_gamelogs_<YEAR>.csv, written to outputs.gamelogs_dir . (⚠️ Schema (inferred): includes player IDs, game date, team, at-bats, hits, HR, RBIs, etc., aligned with PyBaseball gamelog columns .)
+	•	⚙️ Config keys: seasons, outputs.gamelogs_dir, pybaseball_timeout, and global overwrite_policy .
+	•	💬 CLI flags: --season <YEAR> (override to a single season); global flags --overwrite-policy, --log-level, and generic --set key=value for any config overrides .
+	•	🧱 Helper functions: Use load_config() to read config (validated by Pydantic)  and logging_utils.get_rotating_logger() to initialize logger for this module.
+	•	🔒 Logging config: Writes to logs/module_a.log, with log level from cfg["logging"]["level"] and rotating file handler using max_bytes and backup_count from config . Format includes timestamp, module name, level, and message.
+	•	✅ Pydantic: All config values and data rows are validated against Pydantic BaseModel schemas (updated to v2 syntax, e.g. using @field_validator for custom parsing)  .
+	•	🚫 Edge cases/bugs: Originally the filename and import mismatches caused pipeline failures; now fixed by renaming to module_a.py. Ensure idempotency: on rerun with overwrite_policy: "skip", module skips already‑existing data  (pipeline’s skip logic only checks if gamelogs_dir has any files ).
+	•	🛠 Fixed behaviors: Implemented idempotent writes and alias normalization. Honors overwrite_policy (default skip): e.g. skip will leave existing CSVs intact; overwrite forces full re-fetch; append could be added if needed (for appending new data)  .
+
+Module A2 — module_a2.py
+	•	✅ File name: module_a2.py
+	•	🎯 Purpose: Fetch recent-day MLB gamelogs via the MLB StatsAPI (e.g. latest games’ batting/pitching stats) and append them to the historical gamelog CSVs. Ensures daily data updates without duplicates .
+	•	🔗 Inputs/Config: Config keys in statsapi (timeout, retries) and same gamelogs_dir as Module A . Optional date inputs for range.
+	•	📤 Outputs: Appends new game rows to the existing season CSV files in outputs.gamelogs_dir. (⚠️ Schema (inferred): Same columns as Module A’s outputs, matching historical files.)
+	•	⚙️ Config keys: statsapi.timeout, statsapi.max_retries, statsapi.retry_delay, outputs.gamelogs_dir, and overwrite_policy (uses same policy mechanism as A) .
+	•	💬 CLI flags: --date (specific date), --start-date/--end-date for a range; plus global --overwrite-policy, --log-level as above .
+	•	🧱 Helper functions: Uses load_config() and get_rotating_logger() similarly.
+	•	🔒 Logging config: logs/module_a2.log, same config-driven rotation and format.
+	•	✅ Pydantic: Validates API date inputs (parsed to datetime.date via @field_validator) and row schema.
+	•	🚫 Edge cases: Must avoid duplicate rows (idempotent): e.g. track latest date in CSV and only append newer games. The pipeline spec ensures this module always runs each day for fresh data .
+	•	🛠 Fixed behaviors: Consistent aliases and error handling for date parsing. Always append mode by design (override policy effectively ignored so daily data is always fetched).
+
+Module B — module_b.py
+	•	✅ File name: module_b.py
+	•	🎯 Purpose: Download static reference CSV datasets (parks, teams, etc.) listed in config, and save each to a static directory  . Uses atomic write (download to temp, rename) to avoid partial files.
+	•	🔗 Inputs/Config: Config key static_csvs (a list of {name,url} entries) and outputs.static_dir for output  . No external data needed beyond URLs.
+	•	📤 Outputs: Each file (e.g. parks.csv, teams.csv) downloaded to outputs.static_dir. (⚠️ Schema: Depends on source; tests should verify presence of expected columns like park IDs or team info as per data dictionary.)
+	•	⚙️ Config keys: static_csvs (list of {name,url}), outputs.static_dir, overwrite_policy .
+	•	💬 CLI flags: No special flags aside from generic overrides (--set) and --log-level .
+	•	🧱 Helper functions: Uses load_config(); can use standard HTTP library with retries.
+	•	🔒 Logging config: logs/module_b.log. Log download success/fail for each file.
+	•	✅ Pydantic: Optionally validate config schema for static files (name/url) and file existence.
+	•	🚫 Edge cases: Handle download errors (retry or abort); if overwrite_policy: skip, existing files in static_dir remain unchanged to ensure idempotency.
+	•	🛠 Fixed behaviors: Ensured no hard-coded URLs (all in config) and atomic file writes.
+
+Module C — module_c.py
+	•	✅ File name: module_c.py
+	•	🎯 Purpose: Generate contextual features from the static CSVs (e.g. compute park factors, Elo ratings) and produce a consolidated context features file  .
+	•	🔗 Inputs/Config: Reads all files in outputs.static_dir; config key outputs.context_dir for where to write. May have feature-specific parameters in config.
+	•	📤 Outputs: A Parquet file (e.g. context_features.parquet) in outputs.context_dir . (⚠️ Schema (inferred): Contains contextual stats keyed by team or park – e.g. park_factor, team_elo, etc., ready for merge.)
+	•	⚙️ Config keys: outputs.static_dir, outputs.context_dir, and any feature parameters (e.g. list of features to compute).
+	•	💬 CLI flags: Generic --set overrides and --log-level .
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). May use Pandas to read CSVs and Pyarrow for Parquet.
+	•	🔒 Logging config: logs/module_c.log. Log file read/write status.
+	•	✅ Pydantic: Validate combined context schema if a model is defined; ensure required columns present.
+	•	🚫 Edge cases: If static CSVs are missing or malformed, abort with error. With overwrite_policy: skip, skip generation if outputs.context_dir already has expected file.
+	•	🛠 Fixed behaviors: Standardized column normalization using alias maps to ensure consistency with gamelog columns .
+
+Module D — module_d.py
+	•	✅ File name: module_d.py
+	•	🎯 Purpose: Consolidate historical gamelogs (from A/A2) with context features (from C) and compute rolling-window aggregates (e.g. 7-day, 30-day stats) for each player-game  . Produces the master dataset for modeling.
+	•	🔗 Inputs/Config: Reads CSVs in outputs.gamelogs_dir and context Parquet in outputs.context_dir. Config keys: outputs.merged_dir, rolling window definitions (e.g. window sizes, stats to aggregate) .
+	•	📤 Outputs: A Parquet file (e.g. merged_data.parquet) in outputs.merged_dir . (⚠️ Schema (inferred): Each row = one player-game with features: original stats, team, park factors, plus new columns like hits_last7, HR_last30, etc. Key fields: date, player_id, stats, context features.)
+	•	⚙️ Config keys: outputs.merged_dir, rolling_windows (definitions of window spans and fields) .
+	•	💬 CLI flags: Supports --set overrides for windows or filters and standard logging flags .
+	•	🧱 Helper functions: load_config(), get_rotating_logger(), plus any custom utilities for rolling calculations (using Pandas rolling).
+	•	🔒 Logging config: logs/module_d.log.
+	•	✅ Pydantic: Validate merged schema (e.g. via a MergedRow model) to ensure no missing columns .
+	•	🚫 Edge cases: Missing data: if gamelog or context inputs are empty or misaligned, abort. With overwrite_policy: skip, do not overwrite existing merged data. Coarse skip logic may skip D if merged_dir exists (see pipeline behavior) .
+	•	🛠 Fixed behaviors: Ensured all input columns use the same normalized names (via COLUMN_MAP) so merge keys align .
+
+Module E — module_e.py
+	•	✅ File name: module_e.py
+	•	🎯 Purpose: Fetch daily probable/confirmed starters (especially pitchers) via MLB StatsAPI to know which players will play today  .
+	•	🔗 Inputs/Config: Config key outputs.starters_dir for output; config statsapi.* for API settings; optional date parameter (defaults to today) .
+	•	📤 Outputs: A CSV or Parquet file (e.g. starters_<DATE>.csv) in outputs.starters_dir . (⚠️ Schema: rows with at least player_id/name, team, position; e.g. columns like game_date, team, slot, player_name.)
+	•	⚙️ Config keys: outputs.starters_dir, statsapi.timeout, etc., and overwrite_policy.
+	•	💬 CLI flags: --date to specify a particular date; also global flags.
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). Might use utils.name_aliases for normalization.
+	•	🔒 Logging config: logs/module_e.log.
+	•	✅ Pydantic: Validate schema of starters file if model defined (fields like Player, Position, Team).
+	•	🚫 Edge cases: If API fails or no games (e.g. off-season), log and produce an empty file or skip. With skip policy, do not overwrite an existing starters file.
+	•	🛠 Fixed behaviors: Standardized player/team naming via alias mappings to match other modules .
+
+Module F — module_f.py
+	•	✅ File name: module_f.py
+	•	🎯 Purpose: Filter the consolidated dataset to produce the model-ready slice (e.g. select recent seasons, drop players with low PA, remove missing targets)  . Optionally incorporate starters info to focus on players scheduled to play.
+	•	🔗 Inputs/Config: Reads merged data from outputs.merged_dir, and optionally starters data from outputs.starters_dir. Config section filter.* (e.g. min_games, min_pa, date cutoffs) and outputs.filtered_dir for output .
+	•	📤 Outputs: A Parquet file (e.g. filtered_data.parquet) in outputs.filtered_dir . (⚠️ Schema: Subset of merged features including only records that meet criteria. Same columns as merged plus maybe a filtered flag.)
+	•	⚙️ Config keys: outputs.filtered_dir, filter parameters like min_games, min_pa, date range thresholds .
+	•	💬 CLI flags: Supports --set overrides for any filter param; --log-level.
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). May use Date utilities for filtering.
+	•	🔒 Logging config: logs/module_f.log.
+	•	✅ Pydantic: Validate that filtered dataset is non-empty and column types.
+	•	🚫 Edge cases: If filters exclude all data, log warning and output empty dataset. If overwrite_policy: skip, do not re-filter if output exists.
+	•	🛠 Fixed behaviors: Clarified use of starters: if provided, could restrict predictions (e.g. only include players in lineup). By default runs regardless and just filters by config rules .
+
+Module G — module_g.py
+	•	✅ File name: module_g.py
+	•	🎯 Purpose: Load a trained MLB prediction model and generate player-level predictions (e.g. projected fantasy points or stats) from the filtered features  . Annotates output with model provenance.
+	•	🔗 Inputs/Config: Reads filtered data from outputs.filtered_dir. Config keys: model_path (path to serialized model, e.g. XGBoost pickle) and outputs.model_outputs_dir  .
+	•	📤 Outputs: A Parquet file (predictions.parquet) in outputs.model_outputs_dir . (⚠️ Schema: Columns include player_id, game date, and predicted values (e.g. predicted_points, predicted_hits, etc.), plus any features needed for provenance.)
+	•	⚙️ Config keys: model_path, outputs.model_outputs_dir, (plus any model-specific hyperparams).
+	•	💬 CLI flags: --model-path (override config model path); generic --set; --log-level.
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). Use libraries like joblib or pickle for model loading, plus NumPy/Pandas.
+	•	🔒 Logging config: logs/module_g.log. Log model file used and number of predictions.
+	•	✅ Pydantic: Optionally define a PredictionRow model to validate output schema.
+	•	🚫 Edge cases: If model file is missing or incompatible, abort with error. If no input rows (empty filtered data), skip model run (or output empty). Skip policy prevents rerunning model if predictions exist.
+	•	🛠 Fixed behaviors: Ensured consistent feature usage (order, names) as when training model. Honor overwrite_policy for predictions.
+
+Module H — module_h.py
+	•	✅ File name: module_h.py
+	•	🎯 Purpose: Combine or ensemble predictions from Module G (e.g. if multiple model outputs exist) into a single consolidated predictions file  . For a single model, effectively passes through; for multiple, joins or averages them.
+	•	🔗 Inputs/Config: Reads one or more Parquet files from outputs.model_outputs_dir. Config keys: outputs.combined_preds_dir and ensemble_method (e.g. “mean” or other merging strategy) .
+	•	📤 Outputs: A unified Parquet file (e.g. combined_predictions.parquet) in outputs.combined_preds_dir . (⚠️ Schema: One row per player with final prediction values. Contains same columns as individual predictions, aggregated as needed.)
+	•	⚙️ Config keys: ensemble_method, outputs.combined_preds_dir.
+	•	💬 CLI flags: Generic overrides and --log-level.
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). Likely uses Pandas to merge multiple files.
+	•	🔒 Logging config: logs/module_h.log.
+	•	✅ Pydantic: Validate final predictions schema (ensure one entry per expected player).
+	•	🚫 Edge cases: If no model outputs found, log error. With overwrite_policy: skip, do not recombine if already present.
+	•	🛠 Fixed behaviors: Ensured consistent key (player_id) for merging. Current implementation simply averages identical columns by default.
+
+Module I — Optional Evaluation (module_i.py / evaluate_model.py)
+	•	✅ File name: module_i.py (or separate evaluate_model.py)
+	•	🎯 Purpose: Compare combined predictions against actual outcomes to compute evaluation metrics (e.g. MSE, accuracy)  . Designed as QA step, typically run later.
+	•	🔗 Inputs/Config: Needs outputs.combined_preds_dir (predictions) and ground-truth actual results (from a source or test data). Config keys: outputs.tests_dir (where metrics are saved) and any evaluation parameters.
+	•	📤 Outputs: Metrics file (CSV or JSON) in outputs.tests_dir . (⚠️ Schema: One row of evaluation results per model or stat – e.g. R2, MAE etc.)
+	•	⚙️ Config keys: outputs.tests_dir, evaluation-specific settings (e.g. list of metrics).
+	•	💬 CLI flags: Likely --run-eval or similar to include in pipeline; else, --log-level.
+	•	🧱 Helper functions: load_config(), get_rotating_logger().
+	•	🔒 Logging config: logs/module_i.log.
+	•	✅ Pydantic: Validate eval results structure if modelled.
+	•	🚫 Edge cases: If predicted or actual data is missing/empty, log a skip message and exit without error (so pipeline can continue) .
+	•	🛠 Fixed behaviors: Move any evaluation code from tests to this module and honor configuration flags. Avoid PyTest conflicts by not using test file names.
+
+Module K — module_k.py
+	•	✅ File name: module_k.py
+	•	🎯 Purpose: Fetch vig-free player proposition betting lines from Pinnacle API (primary) or backup source for the current day  . Strips out bookmaker vigorish to compute fair line probabilities.
+	•	🔗 Inputs/Config: Uses true_line_sources config (with primary and backup URLs/APIs) and outputs.dir as base for output. May include API credentials/sport IDs.
+	•	📤 Outputs: A CSV file (e.g. true_lines_<DATE>.csv) under outputs.dir/true_lines/ . Columns include at least player, market (stat category), line_value, over_odds, under_odds   (⚠️ Schema: inferred from API).
+	•	⚙️ Config keys: true_line_sources.primary, true_line_sources.backup, and outputs.dir (which contains true_lines subdir) .
+	•	💬 CLI flags: No specific flags (no parameters in table). Global --log-level.
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). Likely uses requests for HTTP and name_aliases, market_aliases to normalize names  . Possibly a Pydantic Line model for each row.
+	•	🔒 Logging config: logs/module_k.log. Log number of lines fetched, fallback usage, and any unmapped names  .
+	•	✅ Pydantic: Define a BaseModel (e.g. LineEntry) with fields like player:str, market:str, line_value:float, over_odds:float, under_odds:float to validate output  .
+	•	🚫 Edge cases: Handle API rate limits (include delays); if primary fails, use backup URL. Name mismatches (e.g. “Los Angeles Dodgers” vs “LAD”) must be resolved via alias maps . If no lines found, output empty CSV.
+	•	🛠 Fixed behaviors: Added vig removal formula, robust error checking, and alias normalization so market names map to our stat names  .
+
+Module L — module_l.py
+	•	✅ File name: module_l.py
+	•	🎯 Purpose: Use a local LLM (via provided API) to generate narrative insights for each player’s prediction and merge with numeric outputs  . Outputs final CSV of predictions plus a TXT report.
+	•	🔗 Inputs/Config: Reads combined predictions from outputs.combined_preds_dir and true lines from outputs.dir/true_lines. Config keys: llm.model, llm.endpoint, llm.temperature, llm.prompt_template, and outputs.dir .
+	•	📤 Outputs: A CSV (e.g. mlb_llm_predictions_<date>.csv) and TXT (e.g. mlb_llm_explanations_<date>.txt) in outputs.dir . (Schema: CSV columns like player, model_pred, line, llm_pred, flag ; TXT contains narrative per player.)
+	•	⚙️ Config keys: All under llm section (model, endpoint, temperature, max_tokens, prompt_template) plus dry_run to skip actual API calls (generate template output) and outputs.dir .
+	•	💬 CLI flags: --dry-run to skip real LLM queries; standard --log-level.
+	•	🧱 Helper functions: load_config(), get_rotating_logger(). Likely uses HTTP client to call LLM endpoint, and Jinja2 or similar to render prompts with placeholders.
+	•	🔒 Logging config: logs/module_l.log. Log number of LLM queries, warnings if any prompt fails, and final output summary.
+	•	✅ Pydantic: Could define models for LLM output rows (e.g. ensure llm_pred is float or numeric sentiment).
+	•	🚫 Edge cases: If LLM service is unreachable or returns error, log and exit gracefully. If --dry-run, only write headers or sample output. Must ensure each prediction has corresponding narrative; if placeholder values (e.g. {HR_gamelog}) are missing, log a warning.
+	•	🛠 Fixed behaviors: Ensure the module loads the latest game stats for each player (A2 must have run prior). Use the combined data and true lines to construct a rich input for LLM . Respect --dry-run by skipping API calls and using placeholder output.
+
+Orchestrator (Module J) — pipeline.py
+	•	✅ File name: pipeline.py
+	•	🎯 Purpose: Orchestrates execution of Modules A–L in sequence based on pipeline.module_sequence in config . Parses global CLI, loads config.yaml (via Pydantic PipelineCfg model), and runs each module (importing or spawning a subprocess) . Collects exit codes and handles concurrency if specified.
+	•	🔗 Inputs/Config: Requires the top-level config file (--config path). Config sections used: pipeline.module_sequence, pipeline.concurrency, pipeline.continue_on_failure  . Also uses all shared config (outputs paths, overwrite_policy, etc.).
+	•	📤 Outputs: Final result is the full pipeline run; intermediate outputs are written by each module. Also logs collected to logs/pipeline_<timestamp>.log.
+	•	⚙️ Config keys: pipeline.module_sequence (list of module codes) , pipeline.concurrency (int) , pipeline.continue_on_failure (bool) , plus global seasons, overwrite_policy, and paths as per modules.
+	•	💬 CLI flags: --config <path> to specify config file; --modules A,B,... to restrict which modules to run; --start-from <X>, --stop-after <Y> to run a subsequence ; --concurrency <N>; --continue-on-failure; --overwrite-policy [skip|overwrite|append]; --dry-run; standard --log-level. (Date flags like --start-date/--end-date were added to support Modules A2/E.) All modules receive --config and --log-level when called.
+	•	🧱 Helper functions: Uses utils.import_or_exec(module_code) to invoke each module by name. Also uses load_config() and a shared logger for orchestration. Pydantic PipelineCfg model ensures pipeline section is valid .
+	•	🔒 Logging config: Initializes logs/pipeline_<ts>.log with a rotating handler and console output . Global format includes timestamp, level, and module name. The pipeline logger controls high-level messages (module start/finish, errors).
+	•	✅ Pydantic: Uses a PipelineCfg BaseModel to validate the pipeline section (sequence, types) upon loading .
+	•	🚫 Edge cases/bugs: If a module import fails (due to naming mismatch), pipeline falls back to subprocess execution ; fixed by ensuring modules are named module_<letter>.py. Skip logic: pipeline checks only if output folder exists to decide skipping a module  (coarse, so it may skip A even if only one of its two files is missing). Dependencies: ensures order A→A2 and others as per config. With --continue-on-failure, the pipeline will try subsequent modules even if one fails (default is to halt).
+	•	🛠 Fixed behaviors: Standardized module file names to module_a.py…module_l.py. Parsed and propagated global flags correctly (added missing flags like --start-date, --end-date, --dry-run) . Ensured each module receives the correct config and logging parameters.
+
+⚙️ Config Schema Reference
+
+All configurable keys (with types and examples) are:
+	•	pipeline:
+	•	module_sequence: List[str] (e.g. ["A","A2","B",...,"L"]) 
+	•	concurrency: int (e.g. 1) 
+	•	continue_on_failure: bool (false or true) 
+	•	Global:
+	•	seasons: List[int] (years of historical data, e.g. [2020,2021,2022]) 
+	•	overwrite_policy: str ("skip"|"overwrite"|"append"|"refresh", default "skip") 
+	•	outputs: (all str paths)
+	•	outputs.dir: base output directory (e.g. "outputs") 
+	•	outputs.gamelogs_dir: "outputs/gamelogs" 
+	•	outputs.static_dir: "outputs/static_data" 
+	•	outputs.context_dir: "outputs/context_features" 
+	•	outputs.merged_dir: "outputs/merged_data" 
+	•	outputs.starters_dir: "outputs/starters" 
+	•	outputs.filtered_dir: "outputs/filtered_data" 
+	•	outputs.model_outputs_dir: "outputs/model_preds" 
+	•	outputs.combined_preds_dir: "outputs/predictions" 
+	•	outputs.tests_dir: "outputs/evaluation" (for Module I)
+	•	logging:
+	•	logging.dir: str (log directory, e.g. "logs") 
+	•	logging.level: str ("DEBUG"|"INFO"|..., default "INFO") 
+	•	logging.max_bytes: int (e.g. 10000000 for 10MB) 
+	•	logging.backup_count: int (e.g. 3) 
+	•	statsapi: (for Modules A2 & E)
+	•	statsapi.timeout: int seconds (e.g. 30) 
+	•	statsapi.max_retries: int (e.g. 3) 
+	•	statsapi.retry_delay: int seconds (e.g. 2) 
+	•	static_csvs: List[dict] (for Module B) – each entry with:
+	•	name: str (filename, e.g. "parks.csv") 
+	•	url: str (download link) 
+	•	model_path: str (path to trained model file, e.g. "models/mlb_xgboost.pkl")  (used by Module G).
+	•	ensemble_method: str (e.g. "mean")  (used by Module H).
+	•	true_line_sources: object (Module K) – should contain:
+	•	primary: str (e.g. "https://api.pinnacle.com/...") 
+	•	backup: str (fallback URL) 
+	•	llm: object (Module L) – settings for LLM:
+	•	llm.model: str (model name, e.g. "llama-3-70b-instruct-Q4") 
+	•	llm.endpoint: str (URL for LLM API) 
+	•	llm.temperature: float (e.g. 0.3) 
+	•	llm.max_tokens: int (e.g. 256) 
+	•	llm.prompt_template: str (filepath to Jinja2 template, e.g. "prompts/mlb_prediction.jinja2") 
+
+All config keys are validated by Pydantic models on load. Unknown keys or wrong types will raise errors .
+
+🧭 Execution Flow Table
+
+Modules execute in this sequence by default, with data passed via shared directories (see arrows):
+
+A  ➜  outputs.gamelogs_dir (historic gamelogs CSVs) [oai_citation:132‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,)  
+A2 ➜  append latest rows to outputs.gamelogs_dir (daily stats) [oai_citation:133‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,policy%60)  
+B  ➜  outputs.static_dir (downloaded static CSVs) [oai_citation:134‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,n%2Fa)  
+C  ➜  outputs.context_dir (Parquet of context features) [oai_citation:135‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,n%2Fa)  
+D  ➜  outputs.merged_dir (Parquet combining gamelogs + context) [oai_citation:136‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,n%2Fa)  
+E  ➜  outputs.starters_dir (CSV/Parquet of daily starters) [oai_citation:137‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,date)  
+F  ➜  outputs.filtered_dir (Parquet of filtered/model-ready data) [oai_citation:138‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,)  
+G  ➜  outputs.model_outputs_dir (Parquet of model predictions) [oai_citation:139‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=overrides%20%20%20%20,)  
+H  ➜  outputs.combined_preds_dir (Parquet of combined predictions) [oai_citation:140‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=%60,n%2Fa)  
+K  ➜  outputs.dir/true_lines (CSV of betting lines) [oai_citation:141‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,n%2Fa)  
+L  ➜  outputs.dir (final CSV & TXT combining predictions with LLM narrative) [oai_citation:142‡file-4dkaocs5mqyrxxrnmhf1iv](file://file-4dKaocs5MQyRxxRnMhf1iv#:~:text=,run)  
+
+Solid arrows = mandatory data flow. (Module I runs optionally after H if actual outcomes exist.)
+
+🔁 Logging & CLI Standards Recap
+	•	Log Format: All modules use a unified log format including timestamp, module name, log level, and message. The rotating logger from utils.logging_utils.get_rotating_logger() enforces this format consistently  .
+	•	Log Files: Each module writes to its own log under logs/. E.g. logs/module_a.log, logs/pipeline_<timestamp>.log  . Rotation size and backups follow logging.max_bytes and logging.backup_count from config.
+	•	Rotating Logger: All scripts should call get_rotating_logger(__name__, log_dir=cfg["logging"]["dir"], level=cfg["logging"]["level"]) at startup (or equivalent) to apply the standard rotating file handler  .
+	•	CLI Flags (Global): Every script (pipeline and modules) supports:
+	•	--config <path> (YAML config file)
+	•	--log-level <LEVEL> to override logging.level
+	•	--overwrite-policy [skip|overwrite|append] (global default for modules, except A2 which always appends)
+	•	--set key=value (generic override for any config entry)  .
+	•	Pipeline CLI (Module J): Additionally: --modules A,B,... (run subset), --start-from X, --stop-after Y, --concurrency N, --continue-on-failure, --dry-run (skip writing outputs) . Date range flags --start-date, --end-date also available (used by Modules A2/E) .
+	•	Module CLI: Module-specific flags (e.g. --season for A, --date for A2/E, --model-path for G) are only used when running those modules standalone. In pipeline runs, config supplies values, so module flags may be ignored or not passed through .
+
+🧪 Testing & Validation Plan
+
+For each module, design tests with minimal synthetic data to verify correctness and idempotency:
+	•	Module A:
+	•	Synthetic Test: Set seasons: [2023] and mock PyBaseball to return a tiny DataFrame (e.g. one batting and one pitching row for 2023). Run module_a.py.
+	•	Verify: Check that outputs/gamelogs/mlb_all_batting_gamelogs_2023.csv (and pitching) exists, and columns match expected (e.g. player_id, date, team, at_bats, hits, ...).
+	•	Overwrite Behavior: With overwrite_policy: skip, re-running should detect existing files and skip fetching (no changes to files) . Using --overwrite-policy overwrite should regenerate files.
+	•	Module A2:
+	•	Synthetic Test: Provide one new game entry via mocked StatsAPI for today’s date. Run module_a2.py.
+	•	Verify: Original gamelog CSV now has one extra row appended. New rows’ dates match --date or default (today).
+	•	Overwrite Behavior: Designed to always append. Even if CSV exists, it adds only new games. (Thus skip policy is effectively bypassed for fresh data.)
+	•	Module B:
+	•	Synthetic Test: In config, list one small CSV (e.g. parks.csv from a known URL) but use --dry-run or local dummy URL. Alternatively, simulate by pointing static_csvs to small test files (e.g. local file:// paths).
+	•	Verify: After running module_b.py, outputs/static_data/parks.csv exists and its content matches the source.
+	•	Overwrite Behavior: With skip, existing static files are not re-downloaded. With overwrite, re-download replaces them.
+	•	Module C:
+	•	Synthetic Test: Create a minimal outputs/static_data/teams.csv (e.g. columns team_id, rating) and maybe parks.csv. Run module_c.py.
+	•	Verify: outputs/context_features/context_features.parquet exists and contains merged fields (e.g. team_id with computed team_rating, etc.).
+	•	Overwrite Behavior: Skip or overwrite based on policy; default skip avoids recomputing if file exists.
+	•	Module D:
+	•	Synthetic Test: Produce one-row gamelog CSV (mlb_all_batting_gamelogs.csv) and one-row context_features.parquet with matching team. Run module_d.py.
+	•	Verify: outputs/merged_data/merged_data.parquet exists and contains combined fields (date, player, batting stats, plus context feature).
+	•	Overwrite Behavior: Default skip if merged_data.parquet exists; with overwrite, regenerate with same content.
+	•	Module E:
+	•	Synthetic Test: Mock StatsAPI to return one starter (player name). Run module_e.py --date 2025-01-01.
+	•	Verify: outputs/starters/starters_2025-01-01.csv has a row with correct player and team fields.
+	•	Overwrite Behavior: Skip if file exists; overwrite if flagged.
+	•	Module F:
+	•	Synthetic Test: Using the merged data from D and starters from E, configure min_games: 1. Run module_f.py.
+	•	Verify: outputs/filtered_data/filtered_data.parquet has the same one row (since it meets criteria). Change a criterion to exclude it and confirm output empties.
+	•	Overwrite Behavior: With skip, it will not overwrite existing filtered file; with overwrite, it will reapply filters.
+	•	Module G:
+	•	Synthetic Test: Provide a dummy model file (a trivial scikit-learn model or even a predict() stub) and a filtered Parquet with one player. Run module_g.py.
+	•	Verify: outputs/model_preds/predictions.parquet exists with one row: contains player_id, original features, and a new predicted_value.
+	•	Overwrite Behavior: Skip regenerating if file exists; overwrite if flagged.
+	•	Module H:
+	•	Synthetic Test: Create two small prediction Parquets in model_preds/. Run module_h.py.
+	•	Verify: outputs/predictions/combined_predictions.parquet exists containing one row (player) with averaged predictions from both files.
+	•	Overwrite Behavior: Skip vs overwrite similar to others.
+	•	Module K:
+	•	Synthetic Test: Use a small JSON/CSV from Pinnacle (or a stub function) that contains, say, one line entry: {"player":"John Doe","market":"Hits","line":1.5,"over_odds":2.0,"under_odds":1.8}. Run module_k.py.
+	•	Verify: outputs/true_lines/true_lines_<date>.csv exists with columns player,market,line_value,over_odds,under_odds, containing that row (with market resolved to something like Hits_gamelog).
+	•	Overwrite Behavior: Skip if file exists; overwrite to refresh lines.
+	•	Module L:
+	•	Synthetic Test: Create a small combined predictions Parquet (one player, e.g. predicted 3 hits, prediction) and a true_lines CSV (same player, line=2.5). Use --dry-run first.
+	•	Verify: outputs/mlb_llm_predictions_<date>.csv and .txt are created. CSV has columns [player,model_pred,line,llm_pred,flag] (flag e.g. “over”/“under”/”” ), and TXT has narrative lines (even placeholder text for dry-run). Check placeholders like {R_gamelog} are replaced.
+	•	Overwrite Behavior: Each run can overwrite previous final outputs (no skip logic by default, but controlled by overwrite_policy if implemented for final outputs).
+	•	Pipeline (J):
+	•	Synthetic Test: Use the above as sub-tests or run pipeline.py end-to-end with a minimal config that includes modules A-L. Use --dry-run to prevent hitting external services.
+	•	Verify: All modules execute in correct order (A→A2→…→L)  . Check logs in logs/ and that final outputs contain expected files from each module.
+	•	Overwrite Behavior: Running the full pipeline twice with overwrite_policy: skip should result in “skipping” messages for completed modules (no duplication) . With overwrite_policy: overwrite, it should re-run all stages.
+
+✅ Final Developer Checklist
+	•	Modules Defined: Each of A–L has a clear filename (module_<letter>.py), purpose, inputs, outputs, and config as specified above.
+	•	Config & CLI: All config keys exist (as per schema) and are accessed via Pydantic models. CLI flags match spec for each module and global orchestrator (no missing or extra flags).
+	•	Logging: Every script calls get_rotating_logger() or equivalent to create a log in logs/. The format timestamp | module | level | message is used uniformly. Log level and paths come from config.
+	•	Idempotency: Overwrite policy respected in all modules (default skip). Modules that append data (A2) still conform to policy. Directory checks and file writes avoid partial outputs.
+	•	Data Flow: Module sequence in config.yaml (["A","A2","B",...,"L"]) matches the intended flow, and each output feeds correctly to the next module. Dependencies and parallelism (concurrency) have been considered.
+	•	Error Handling: Edge cases (missing input data, API failures, empty results) are explicitly handled (with informative logs or skips) so the pipeline won’t crash unexpectedly.
+	•	Testing: Synthetic tests cover each module’s logic and overwrite behavior. The orchestrator has been tested for entire pipeline runs (with and without --dry-run).
+	•	Consistency: Column names and aliases are consistently normalized across modules (using shared COLUMN_MAP), ensuring joins/merges work (e.g. player_id field is uniform) .
+	•	Compliance: All fixes and conventions from the audit and rebuild docs have been implemented (e.g. Pydantic v2 usage, file naming)  .
+
+Each item above should be double-checked before implementation to ensure the pipeline is fully runnable with zero ambiguity. All citations (【…】) refer to verified design specifications in the provided architecture docs.

@@ -1,0 +1,34 @@
+# config.yaml
+# ------------------------------------------
+# Global Configuration for MLB Prediction Pipeline
+# ------------------------------------------
+
+paths:
+  outputs_dir: outputs/
+  static_csvs_dir: outputs/static_csvs/
+  consolidated_data_path: outputs/consolidated/consolidated_data.parquet
+  feature_matrix_path: outputs/features/feature_matrix.parquet
+  model_dir: outputs/models/
+  predictions_dir: outputs/predictions/
+  logs_dir: logs/
+
+inputs:
+  static_csv_urls:
+    - "https://example.com/teams.csv"
+    - "https://example.com/stadiums.csv"
+  recent_game_logs_days: 7
+
+model:
+  model_type: xgboost
+  params:
+    max_depth: 6
+    n_estimators: 100
+    learning_rate: 0.1
+  random_state: 42
+
+cli:
+  overwrite_policy: safe  # options: 'safe', 'force'
+
+flags:
+  use_cached_data: true
+  save_predictions: true
