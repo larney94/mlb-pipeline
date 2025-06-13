@@ -4,3 +4,7 @@ utils/access_token.txt
 __pycache__/
 *.pyc
 Instructions.zip
+.DS_Store
+__pycache__/
+*.pyc
+Instructions.zip
