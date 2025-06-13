@@ -41,3 +41,6 @@ def get_rotating_logger(
         logger.addHandler(handler)
 
     return logger
+    
+def ensure_dir(path: Path):
+    path.mkdir(parents=True, exist_ok=True)

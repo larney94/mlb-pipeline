@@ -1,21 +1,30 @@
-# utils/config.py
 from pathlib import Path
 import yaml
-from pydantic import BaseModel, Field
-from typing import List, Literal, Optional
+from pydantic import BaseModel
 
-class ModelParams(BaseModel):
-    max_depth: int
-    n_estimators: int
-    learning_rate: float
 
+# Define structured sub-sections of the config
+class InputsConfig(BaseModel):
+    recent_gamelogs_csv: str
+    static_player_csv: str
+
+
+class OutputsConfig(BaseModel):
+    context_dir: str
+    full_feature_set: str
+
+
+# Full config schema
 class Config(BaseModel):
-    paths: dict
-    inputs: dict
-    model: dict
-    cli: dict
-    flags: dict
+    inputs: InputsConfig
+    outputs: OutputsConfig
+    model: dict = {}
+    paths: dict = {}
+    cli: dict = {}
+    flags: dict = {}
 
+
+# Load and parse the YAML config
 def load_config(path: str = "config.yaml") -> Config:
     config_path = Path(path)
     if not config_path.exists():

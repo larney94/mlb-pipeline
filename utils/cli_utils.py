@@ -1,4 +1,3 @@
-# utils/cli_utils.py
 """
 Project-wide helper utilities for
 ✅ CLI override handling
@@ -24,11 +23,18 @@ import os
 import sys
 import logging
 from pathlib import Path
+
+def ensure_dir(path: Path):
+    path.mkdir(parents=True, exist_ok=True)
+
 from typing import Dict, Any, List, Sequence, Union
+from utils.logging_utils import get_rotating_logger
+
 
 import yaml  # PyYAML – already required by utils.config
 
 _LOG = logging.getLogger(__name__)
+LOGGER = get_rotating_logger("cli_utils")
 
 
 # --------------------------------------------------------------------------- #
@@ -126,8 +132,9 @@ def resolve_output_path(
             path = base / path
     path = path.resolve()
     if create_dir:
-        path.mkdir(parents=True, exist_ok=True)
+        path.parent.mkdir(parents=True, exist_ok=True)
     return path
+
 
 
 # --------------------------------------------------------------------------- #
@@ -156,3 +163,31 @@ def extract_set_overrides(argv: List[str] | None = None) -> List[str]:
         else:
             idx += 1
     return overrides
+
+
+# --------------------------------------------------------------------------- #
+# Overwrite policy logic — used across all modules
+# --------------------------------------------------------------------------- #
+def handle_overwrite(output_path: str | Path, cfg: dict) -> bool:
+    """
+    Returns True if the file can be written based on the overwrite policy.
+    - error → raise FileExistsError
+    - warn  → skip and log warning
+    - force → allow overwrite
+    """
+    output_path = Path(output_path)
+    policy = cfg.get("overwrite_policy", "error")
+
+    if output_path.exists():
+        if policy == "error":
+            raise FileExistsError(f"{output_path} exists and overwrite_policy=error")
+        elif policy == "warn":
+            LOGGER.warning(f"{output_path} exists — skipping due to overwrite_policy=warn")
+            return False
+        elif policy == "force":
+            LOGGER.info(f"{output_path} exists — overwriting due to overwrite_policy=force")
+            return True
+        else:
+            raise ValueError(f"Invalid overwrite_policy: {policy}")
+    return True
+

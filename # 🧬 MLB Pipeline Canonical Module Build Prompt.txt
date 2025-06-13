@@ -1,187 +1,191 @@
-**⚠️ Attention:**
-You must approach this task with **extreme attention to detail, rigorous analytical thinking, and meticulous verification** at every single step. Before finalizing your response:
+⚠️ Attention:
+You must approach this task with extreme attention to detail, rigorous analytical thinking, and meticulous verification at every single step. Before finalizing your response:
 
-1. **Explicit Step-by-Step Reasoning:**
-   * Clearly articulate each step of your thought process.
-   * Justify every decision, choice, and conclusion explicitly.
+1. Explicit Step-by-Step Reasoning:
+   - Clearly articulate each step of your thought process.
+   - Justify every decision, choice, and conclusion explicitly.
 
-2. **Continuous Internal Validation:**
-   * Verify each intermediate step for logical coherence, consistency, and correctness.
-   * Internally cross-check assumptions, methods, and intermediate results for accuracy.
+2. Continuous Internal Validation:
+   - Verify each intermediate step for logical coherence, consistency, and correctness.
+   - Internally cross-check assumptions, methods, and intermediate results for accuracy.
 
-3. **Proactive Error Prevention:**
-   * Anticipate potential pitfalls, oversights, edge-cases, and subtle errors.
-   * Explain proactively how you've addressed and mitigated each identified risk.
+3. Proactive Error Prevention:
+   - Anticipate potential pitfalls, oversights, edge-cases, and subtle errors.
+   - Explain proactively how you've addressed and mitigated each identified risk.
 
-4. **Comprehensive Cross-Verification:**
-   * Cross-validate your final outputs thoroughly, ensuring all parts align perfectly.
-   * Demonstrate explicitly how this validation process was carried out.
+4. Comprehensive Cross-Verification:
+   - Cross-validate your final outputs thoroughly, ensuring all parts align perfectly.
+   - Demonstrate explicitly how this validation process was carried out.
 
-5. **Transparency of Uncertainty:**
-   * Explicitly highlight any uncertainties, ambiguities, or areas requiring further clarification or external verification.
-   * Provide clear recommendations on resolving these uncertainties.
+5. Transparency of Uncertainty:
+   - Explicitly highlight any uncertainties, ambiguities, or areas requiring further clarification or external verification.
+   - Provide clear recommendations on resolving these uncertainties.
 
-6. **Structured Verification Summary:**
-   * Conclude with a concise, structured summary confirming your verification steps, outcomes, and confidence levels explicitly.
+6. Structured Verification Summary:
+   - Conclude with a concise, structured summary confirming your verification steps, outcomes, and confidence levels explicitly.
 
-**Under no circumstances:**
-* Rely on assumptions, guesses, or shortcuts.
-* Compromise accuracy or detail for speed.
+Under no circumstances:
+- Rely on assumptions, guesses, or shortcuts.
+- Compromise accuracy or detail for speed.
 
-**Your primary goal is absolute correctness, clarity, and completeness.**
+Your primary goal is absolute correctness, clarity, and completeness.
 
----
+───────────────────────────────────────────────────────────────────────────────
 
-# 🧬 MLB Pipeline Canonical Module Build Prompt
+🧬 MLB Pipeline Canonical Module Build Prompt
 
-> **ATTENTION:**  
-> You are a world-class Python ML pipeline architect and codebase QA specialist.  
-> Your task is to **design and implement** the module: `[MODULE_NAME]` for a production-grade, modular, daily-updating MLB Player-Performance Prediction Pipeline.  
-> **All project documentation, specs, and design files are provided in a single ZIP archive attached to this session.**  
-> **You must treat this ZIP as the single source of truth for all requirements, context, and references.**
+ATTENTION:
+You are a world-class Python ML pipeline architect and codebase QA specialist.
+Your task is to design and implement the module: [MODULE_NAME] for a production-grade, modular, daily-updating MLB Player-Performance Prediction Pipeline.
+All project documentation, specs, and design files are provided in a single ZIP archive attached to this session.
+You must treat this ZIP as the single source of truth for all requirements, context, and references.
 
----
+───────────────────────────────────────────────────────────────────────────────
 
-## 📚 CONTEXT & REQUIREMENTS
+📚 CONTEXT & REQUIREMENTS
 
-- **Pipeline Scope:** End-to-end, modular, config-driven, CLI-executed MLB player prediction system, daily batch and on-demand runs.
-- **Reference Docs:** You MUST conform precisely to all of the following, as found in the ZIP:
-    - `Global Architecture & Design Spec.txt`
-    - `MLB Player‑Performance Prediction Pipeline – Canonical Architecture.txt`
-    - `MLB Player‑Performance Prediction Pipeline – Final Architecture Blueprint.txt`
-    - `Module-by-Module Build Plan.txt`
-    - `MLB Player-Performance Pipeline – Global Design Specification.txt`
-    - `MLB Player-Performance Pipeline Rebuild.pdf`
-    - `MLB Player-Performance Pipeline – Code Audit and Debug Strategy.pdf`
-    - `MLB Pipeline Debug & Refactor Report.pdf`
-    - `Master_prompt.txt`
-    - **Any other file included in the uploaded ZIP—**review EVERY document for constraints, implementation patterns, and edge-case handling.
+Pipeline Scope:
+- End-to-end, modular, config-driven, CLI-executed MLB player prediction system, daily batch and on-demand runs.
 
-**MUST:**  
-- Directly reference the module contract and requirements from `Module-by-Module Build Plan.txt` (from the ZIP).
-- Pull config structure, I/O schema, CLI, and error logic ONLY from these specs—**never hallucinate structure.**
-- If you find ambiguity, reconcile across all files in the ZIP and **explicitly list any assumptions made.**
+Reference Docs:
+You MUST conform precisely to all of the following, as found in the ZIP:
+- Global Architecture & Design Spec.txt
+- MLB Player‑Performance Prediction Pipeline – Canonical Architecture.txt
+- MLB Player‑Performance Prediction Pipeline – Final Architecture Blueprint.txt
+- Module-by-Module Build Plan.txt
+- MLB Player-Performance Pipeline – Global Design Specification.txt
+- MLB Player-Performance Pipeline Rebuild.pdf
+- MLB Player-Performance Pipeline – Code Audit and Debug Strategy.pdf
+- MLB Pipeline Debug & Refactor Report.pdf
+- Master_prompt.txt
+- Any other file included in the uploaded ZIP — review EVERY document for constraints, implementation patterns, and edge-case handling.
 
----
+MUST:
+- Reference the module contract and requirements from Module-by-Module Build Plan.txt
+- Pull config structure, I/O schema, CLI, and error logic ONLY from these specs — never hallucinate structure
+- If ambiguity exists, reconcile across all files in the ZIP and explicitly list any assumptions made
 
-## ⚙️ MODULE REQUIREMENTS
+───────────────────────────────────────────────────────────────────────────────
 
-### 1. Config, CLI, and Overwrite Policy
+⚙️ MODULE REQUIREMENTS
 
-- **Config:** Always use:
-    ```python
+1. Config, CLI, and Overwrite Policy
+
+Always use:
     from utils.config import load_config
     cfg = load_config()
-    ```
-    - Access config with robust error handling.
-    - All keys, inputs, and outputs must match the canonical design in the ZIP.
-    - If config example is missing, deduce ONLY by referencing other modules in the ZIP.
 
-- **CLI:**  
-    - Must use `argparse` or the project’s standardized CLI utility (`typer` if specified).
-    - Must accept at least: `--config-path` (YAML), `--overwrite-policy` (`error|warn|force`).
-    - Must call:
-        ```python
-        from utils.cli_utils import apply_cli_overrides, resolve_output_path
-        cfg = apply_cli_overrides(cfg)
-        output_path = resolve_output_path(cfg['outputs']['[YOUR OUTPUT KEY]'], cfg)
-        ```
-    - Enforce overwrite policy strictly, matching project logic:
-        - `error`: fail if output exists
-        - `warn`: skip, log warning
-        - `force`: overwrite
+- All keys must match canonical YAML structure
+- Enforce overwrite policy via:
+    from utils.cli_utils import apply_cli_overrides, resolve_output_path
+    cfg = apply_cli_overrides(cfg)
+    output_path = resolve_output_path(cfg['outputs']['[YOUR OUTPUT KEY]'], cfg)
 
-### 2. Logging
+Overwrite logic:
+- error: fail if output exists
+- warn: skip and log
+- force: overwrite and log
 
-- Use rotating logger as described in `global_conventions.py`:
-    ```python
+2. Logging
+
+Detect logger file and import accordingly:
+- If utils/global_conventions.py exists:
     from utils.global_conventions import get_rotating_logger
-    LOGGER = get_rotating_logger('[MODULE_NAME]')
-    ```
-- Log: start/end, CLI args, config path, every file read/written (with resolved absolute path), number of records processed, and ALL error conditions.
-- Ensure logs are immediately actionable for debugging and CI.
+- If utils/logging_utils.py exists:
+    from utils.logging_utils import get_rotating_logger
 
-### 3. I/O & Schema
+If ensure_dir() is not defined in the logger file, inject:
+    def ensure_dir(path: Path):
+        path.mkdir(parents=True, exist_ok=True)
 
-- **File Types:**  
-    - Parquet (`pyarrow`) for all main outputs, unless legacy input (CSV).
-    - Do NOT hardcode paths; resolve from config only.
-    - Match ALL input/output schema exactly to blueprint and audit docs from the ZIP.
-    - Validate that outputs match expected columns and dtypes. Fail early and clearly on mismatch.
+Required logs:
+- Start/end
+- CLI args
+- Config path
+- Files read/written
+- Record counts
+- Overwrite mode
+- Schema/logic errors
 
-- **Interim Data:**  
-    - Save and log any major interim result files as specified.
+3. I/O & Schema
 
-### 4. Error Handling & Robustness
+- Use pyarrow for all outputs unless input is legacy CSV
+- All input/output paths must resolve from cfg keys
+- Validate schema before saving
+- Do not hardcode filenames
 
-- Defensive against missing files, malformed config, schema mismatch, file overwrite, or bad CLI params.
-- Catch and log all exceptions with actionable error messages.
-- Assert every output and log assertion results.
+4. Error Handling & Robustness
 
-### 5. Unit Tests
+- Catch: FileNotFoundError, schema mismatch, CLI misuse, config key errors
+- Log all errors with actionable messages
+- Assert row counts and key column presence before/after merges
 
-- Place tests in `tests/test_[MODULE_NAME].py`:
-    - Use `pytest`
-    - Test all functions, main CLI run, and edge cases (empty data, bad config, file already exists, etc.)
-    - Mock or use fixtures for file and config I/O
-    - Must pass with `pytest -v`
-    - Cover >90% of module logic
+5. Unit Tests
 
-### 6. Code Style & Structure
+- Must be in: tests/test_[MODULE_NAME].py
+- Add pytest.ini to project root:
+    [pytest]
+    pythonpath = .
 
-- 100% PEP8, readable, clear separation of concerns.
-- No side effects, no in-line config or path assumptions.
-- All functions/classes have concise, informative docstrings.
-- Use `Path().resolve()` for all file path manipulations.
+Tests must include:
+- Valid path
+- Missing file
+- Schema mismatch
+- Overwrite modes
+- Full CLI run
+- Run via: PYTHONPATH=. pytest -v
 
-### 7. CI & Integration Readiness
+6. Code Style & Structure
 
-- Include `if __name__ == "__main__":` CLI entry.
-- Print/log “success” and output file locations on completion.
-- Test code is ready for GitHub CI (`pytest`) as described in pipeline QA specs.
+- PEP8, black-compatible
+- Path().resolve() for all file paths
+- No inline config
+- Docstrings on every function
 
----
+7. CI & Integration
 
-## 🔬 DELIVERABLES
+- Include if __name__ == "__main__"
+- Log completion and final output path
+- Compatible with GitHub CI using pytest
 
-### ⬇️ Your response must provide, in this order:
+───────────────────────────────────────────────────────────────────────────────
 
-1. **Full `[MODULE_NAME].py` code block**  
-    - End-to-end, ready to drop into the codebase, run as a CLI, with no missing imports or stubs.
+🔬 DELIVERABLES
 
-2. **Full `tests/test_[MODULE_NAME].py` test suite**  
-    - With enough dummy config/fixtures to demonstrate pass/fail for all major logic branches.
+1. [MODULE_NAME].py
+    - Full CLI-ready Python module
 
-3. **Summary table** of:
-    - All config keys accessed (with YAML path as dotted key, e.g., `inputs.gamelogs_csv`)
-    - All outputs produced (with full path as would be in config)
-    - All CLI flags accepted
-    - All logging actions performed
-    - Any design assumptions made, if unavoidable
+2. tests/test_[MODULE_NAME].py
+    - Full pytest suite with fixtures or mocks
 
-4. **Short “How to Run” usage example**, e.g.:
-    ```bash
+3. Summary Table
+    - Config keys
+    - Output file(s)
+    - CLI args
+    - Logging actions
+    - Assumptions made
+
+4. Example Usage:
     python [MODULE_NAME].py --config-path config.yaml --overwrite-policy force
-    ```
 
-5. **Short “What gets logged” description** for QA.
+5. Logging Overview
+    - Logs paths, args, errors, record counts, overwrite status, final output
 
----
+───────────────────────────────────────────────────────────────────────────────
 
-## 🛡️ FINAL VALIDATION (REQUIRED, DO NOT SKIP)
+🛡️ FINAL VALIDATION CHECKLIST
 
-**Before returning your answer:**
+Before returning your response, ensure:
 
-- Review ALL supplied documents in the uploaded ZIP for context or nuance you may have missed.
-- Check that config usage, I/O, logging, error handling, and test logic match global patterns.
-- Double-check every output path and schema for consistency.
-- Confirm `pytest` will run without additional setup or missing fixtures.
-- Confirm CLI usage instructions and docstrings are clear and accurate.
-- Confirm that your module and tests are self-contained and reproducible in isolation.
-- **Flag any potential edge-case or ambiguity for review**; do not make hidden assumptions.
+- [ ] Correct logger import used (logging_utils or global_conventions)
+- [ ] ensure_dir() is present or injected
+- [ ] Config paths match schema from ZIP
+- [ ] CLI works with --config-path and --overwrite-policy
+- [ ] pytest -v passes from root with PYTHONPATH=.
+- [ ] All output paths and schemas match canonical spec
+- [ ] All tests are functional, complete, and modular
+- [ ] You have flagged and documented any ambiguity or edge case explicitly
 
-Respond only when you are 100% confident the code is production-ready and in perfect alignment with all specs.
+───────────────────────────────────────────────────────────────────────────────
 
----
-
-**Now: Build `[MODULE_NAME]` according to the above, referencing ONLY the documentation, specs, and context found in the uploaded ZIP, with absolutely no omitted detail.**
+Now: Build [MODULE_NAME] exactly as described, grounded ONLY in the ZIP's specifications — with zero hallucination, perfect naming, complete logging, full test coverage, and GitHub-ready delivery.

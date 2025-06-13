@@ -1,22 +1,36 @@
 # config.yaml
-# ------------------------------------------
-# Global Configuration for MLB Prediction Pipeline
-# ------------------------------------------
-
-paths:
-  outputs_dir: outputs/
-  static_csvs_dir: outputs/static_csvs/
-  consolidated_data_path: outputs/consolidated/consolidated_data.parquet
-  feature_matrix_path: outputs/features/feature_matrix.parquet
-  model_dir: outputs/models/
-  predictions_dir: outputs/predictions/
-  logs_dir: logs/
+# ────────────────────────────────────────────────
+# Canonical Configuration for MLB Prediction Pipeline
+# Supports modules A–L, CLI overrides, overwrite policy
+# ────────────────────────────────────────────────
 
 inputs:
-  static_csv_urls:
-    - "https://example.com/teams.csv"
-    - "https://example.com/stadiums.csv"
-  recent_game_logs_days: 7
+  seasons: [2022, 2023]
+  recent_gamelogs_csv: outputs/gamelogs/recent_gamelogs.csv
+  static_player_csv: outputs/static/static_player_metadata.csv
+  static_csvs:
+    - name: teams
+      url: https://example.com/teams.csv
+    - name: stadiums
+      url: https://example.com/stadiums.csv
+
+outputs:
+  gamelogs_dir: outputs/gamelogs/
+  static_dir: outputs/static/
+  context_dir: outputs/context/
+  merged_dir: outputs/merged/
+  starters_dir: outputs/starters/
+  full_feature_set: outputs/features/full_feature_set.parquet
+  consolidated_predictions: outputs/predictions/consolidated_predictions.parquet
+  model_dir: outputs/models/
+  logs_dir: logs/
+
+rolling_windows:
+  windows:
+    - days: 7
+      stats: ["hits", "HR", "RBI", "SB"]
+    - days: 30
+      stats: ["hits", "HR", "RBI", "SB", "BB", "K"]
 
 model:
   model_type: xgboost
@@ -27,7 +41,13 @@ model:
   random_state: 42
 
 cli:
-  overwrite_policy: safe  # options: 'safe', 'force'
+  overwrite_policy: safe  # options: safe, force, skip
+  log_level: INFO
+
+logging:
+  max_bytes: 5000000
+  backup_count: 3
+  level: INFO
 
 flags:
   use_cached_data: true
