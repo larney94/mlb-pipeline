@@ -1,0 +1,53 @@
+2025-06-13 19:34:53 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 19:34:53 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='outputs/predictions/final.parquet', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 19:34:53 | INFO | 🧩 Final module sequence: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+2025-06-13 19:34:53 | INFO | ▶️ Running module A...
+2025-06-13 19:34:53 | INFO | ▶️ Running module B...
+2025-06-13 19:34:54 | WARNING | Import failed for B: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:54 | ERROR | Module B failed via subprocess.
+2025-06-13 19:34:54 | INFO | ▶️ Running module C...
+2025-06-13 19:34:54 | WARNING | Import failed for C: module 'module_c' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 19:34:54 | ERROR | Module C failed via subprocess.
+2025-06-13 19:34:54 | INFO | ▶️ Running module D...
+2025-06-13 19:34:54 | WARNING | Import failed for D: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:55 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:55 | ERROR | Module D failed via subprocess.
+2025-06-13 19:34:55 | INFO | ▶️ Running module E...
+2025-06-13 19:34:55 | WARNING | Import failed for E: module 'module_e' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 19:34:56 | ERROR | Module E failed via subprocess.
+2025-06-13 19:34:56 | INFO | ▶️ Running module F...
+2025-06-13 19:34:56 | WARNING | Import failed for F: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:56 | ERROR | Module A failed via subprocess.
+2025-06-13 19:34:56 | INFO | ▶️ Running module G...
+2025-06-13 19:34:56 | WARNING | Import failed for G: module 'module_g' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 19:34:56 | ERROR | Module F failed via subprocess.
+2025-06-13 19:34:56 | INFO | ▶️ Running module H...
+2025-06-13 19:34:56 | WARNING | Import failed for H: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:57 | ERROR | Module G failed via subprocess.
+2025-06-13 19:34:57 | INFO | ▶️ Running module I...
+2025-06-13 19:34:57 | WARNING | Import failed for I: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:57 | INFO | ✅ Module H completed in 0.52s
+2025-06-13 19:34:57 | INFO | ▶️ Running module J...
+2025-06-13 19:34:57 | WARNING | Import failed for J: No module named 'module_j'. Using subprocess fallback.
+2025-06-13 19:34:57 | ERROR | Module J failed via subprocess.
+2025-06-13 19:34:57 | INFO | ▶️ Running module K...
+2025-06-13 19:34:57 | WARNING | Import failed for K: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:57 | ERROR | Module I failed via subprocess.
+2025-06-13 19:34:57 | INFO | ▶️ Running module L...
+2025-06-13 19:34:57 | WARNING | Import failed for L: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 19:34:57 | INFO | ✅ Module K completed in 0.60s
+2025-06-13 19:34:58 | ERROR | Module L failed via subprocess.
+2025-06-13 19:34:58 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 19:34:58 | INFO |  - Module B: FAILED
+2025-06-13 19:34:58 | INFO |  - Module C: FAILED
+2025-06-13 19:34:58 | INFO |  - Module D: FAILED
+2025-06-13 19:34:58 | INFO |  - Module E: FAILED
+2025-06-13 19:34:58 | INFO |  - Module A: FAILED
+2025-06-13 19:34:58 | INFO |  - Module F: FAILED
+2025-06-13 19:34:58 | INFO |  - Module G: FAILED
+2025-06-13 19:34:58 | INFO |  - Module H: SUCCESS
+2025-06-13 19:34:58 | INFO |  - Module J: FAILED
+2025-06-13 19:34:58 | INFO |  - Module I: FAILED
+2025-06-13 19:34:58 | INFO |  - Module K: SUCCESS
+2025-06-13 19:34:58 | INFO |  - Module L: FAILED

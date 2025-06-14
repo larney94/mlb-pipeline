@@ -1,0 +1,268 @@
+2025-06-13 15:37:52 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:37:52 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet') model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:37:52 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:37:52 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 39, in main
+    output_path = resolve_output_path(cfg.outputs.predictions, cfg.overwrite_policy)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'predictions'
+
+2025-06-13 15:40:51 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:40:51 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet') model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:40:51 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:40:51 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 39, in main
+    output_path = resolve_output_path(cfg.outputs.predictions, cfg.overwrite_policy)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'predictions'
+
+2025-06-13 15:43:08 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:43:08 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet') model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:43:08 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:43:08 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 39, in main
+    output_path = resolve_output_path(cfg.outputs.predictions, cfg.overwrite_policy)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'predictions'
+
+2025-06-13 15:44:39 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:44:39 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet') model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:44:39 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:44:39 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 39, in main
+    output_path = resolve_output_path(cfg.outputs.predictions, cfg.overwrite_policy)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'predictions'
+
+2025-06-13 15:46:35 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:46:35 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 32, in main
+    cfg = load_config()
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 35, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+outputs.model_predictions
+  Field required [type=missing, input_value={'gamelogs_dir': 'outputs.../', 'logs_dir': 'logs/'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+2025-06-13 15:47:49 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:47:49 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 32, in main
+    cfg = load_config()
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 35, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+outputs.model_predictions
+  Field required [type=missing, input_value={'gamelogs_dir': 'outputs.../', 'logs_dir': 'logs/'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+2025-06-13 15:48:59 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:48:59 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:48:59 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:48:59 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 39, in main
+    output_path = resolve_output_path(cfg.outputs.model_predictions, cfg.overwrite_policy)
+  File "/Users/lukearney/Full MLB Project/utils/cli_utils.py", line 94, in resolve_output_path
+    raise ValueError(f"Invalid overwrite policy: {policy}")
+ValueError: Invalid overwrite policy: 
+
+2025-06-13 15:50:01 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:50:01 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:50:01 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:50:01 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 39, in main
+    output_path = resolve_output_path(cfg.outputs.model_predictions, cfg.cli.get("overwrite_policy", "").strip().lower())
+  File "/Users/lukearney/Full MLB Project/utils/cli_utils.py", line 94, in resolve_output_path
+    raise ValueError(f"Invalid overwrite policy: {policy}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 15:51:45 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:51:45 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:51:45 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:51:45 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 42, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 15:52:34 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:52:34 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:52:34 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:52:34 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 47, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 15:55:34 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:55:34 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:55:34 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:55:34 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 53, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 15:59:00 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 15:59:00 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 15:59:00 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 15:59:00 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 53, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 16:01:24 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 16:01:24 - run_mlb_model - INFO - Using config: inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='') model_path='' required_features=[] overwrite_policy='' model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 16:01:24 - run_mlb_model - ERROR - ❌ Exception occurred:
+2025-06-13 16:01:24 - run_mlb_model - ERROR - Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 55, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 16:03:26 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 16:03:26 - run_mlb_model - INFO - Active config: inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-30/test_cli_run0/context.parquet') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-30/test_cli_run0/predictions.parquet') model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-30/test_cli_run0/dummy_model.joblib' required_features=['x1', 'x2'] overwrite_policy='force' model={} paths={} cli={'overwrite_policy': 'force'} flags={}
+2025-06-13 16:03:26 - run_mlb_model - INFO - ✅ Context features loaded: 2 rows  2 cols
+2025-06-13 16:03:27 - run_mlb_model - INFO - ✅ Predictions generated: 2 rows
+2025-06-13 16:03:27 - run_mlb_model - INFO - 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-30/test_cli_run0/predictions.parquet
+2025-06-13 16:05:07 - run_mlb_model - ERROR - ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 80, in main
+    cfg = apply_cli_overrides(cfg, overrides=args.set)
+  File "/Users/lukearney/Full MLB Project/utils/cli_utils.py", line 65, in apply_cli_overrides
+    merged = yaml.safe_load(yaml.safe_dump(cfg))  # deep copy via yaml round-trip
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/yaml/__init__.py", line 269, in safe_dump
+    return dump_all([data], stream, Dumper=SafeDumper, **kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/yaml/__init__.py", line 241, in dump_all
+    dumper.represent(data)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/yaml/representer.py", line 27, in represent
+    node = self.represent_data(data)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/yaml/representer.py", line 58, in represent_data
+    node = self.yaml_representers[None](self, data)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/yaml/representer.py", line 231, in represent_undefined
+    raise RepresenterError("cannot represent an object", data)
+yaml.representer.RepresenterError: ('cannot represent an object', Config(inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-31/test_cli_run0/context.parquet'), outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-31/test_cli_run0/predictions.parquet'), model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-31/test_cli_run0/dummy_model.joblib', required_features=['x1', 'x2'], overwrite_policy='force', model={}, paths={}, cli={}, flags={}))
+
+2025-06-13 16:07:30 - run_mlb_model - INFO - 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 16:07:30 - run_mlb_model - INFO - Active config: inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-32/test_cli_run0/context.parquet') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-32/test_cli_run0/predictions.parquet') model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-32/test_cli_run0/dummy_model.joblib' required_features=['x1', 'x2'] overwrite_policy='force' model={} paths={} cli={'overwrite_policy': 'force'} flags={}
+2025-06-13 16:07:30 - run_mlb_model - INFO - ✅ Context features loaded: 2 rows  2 cols
+2025-06-13 16:07:31 - run_mlb_model - INFO - ✅ Predictions generated: 2 rows
+2025-06-13 16:07:31 - run_mlb_model - INFO - 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-32/test_cli_run0/predictions.parquet
+2025-06-13 19:34:57 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 19:34:57 | INFO | Active config: logs=LogsConfig(pipeline_log='logs/pipeline.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='outputs/predictions/final.parquet', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True}
+2025-06-13 19:34:57 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 106, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 20:01:42 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main
+    cfg = load_config(args.config_path or "config.yaml")
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+2025-06-13 20:02:27 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main
+    cfg = load_config(args.config_path or "config.yaml")
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+2025-06-13 20:12:34 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main
+    cfg = load_config(args.config_path or "config.yaml")
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+2025-06-13 20:13:22 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main
+    cfg = load_config(args.config_path or "config.yaml")
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+2025-06-13 20:33:30 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 20:33:30 | INFO | Active config: logs={} inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', static_team_csv='', true_lines_dir='', recent_predictions_dir='', combined_preds_dir='', gamelogs_source='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-56/test_cli_run0/context.parquet') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-56/test_cli_run0/predictions.parquet', root='') pipeline={} overwrite_policy='force' model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-56/test_cli_run0/dummy_model.joblib' required_features=['x1', 'x2'] model={} paths={} cli={'overwrite_policy': 'force'} flags={}
+2025-06-13 20:33:30 | INFO | ✅ Context features loaded: 2 rows  2 cols
+2025-06-13 20:33:31 | INFO | ✅ Predictions generated: 2 rows
+2025-06-13 20:33:31 | INFO | 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-56/test_cli_run0/predictions.parquet
+2025-06-13 20:33:55 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 20:33:55 | INFO | Active config: logs={} inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', static_team_csv='', true_lines_dir='', recent_predictions_dir='', combined_preds_dir='', gamelogs_source='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-57/test_cli_run1/context.parquet') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-57/test_cli_run1/predictions.parquet', root='') pipeline={} overwrite_policy='force' model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-57/test_cli_run1/dummy_model.joblib' required_features=['x1', 'x2'] model={} paths={} cli={'overwrite_policy': 'force'} flags={}
+2025-06-13 20:33:55 | INFO | ✅ Context features loaded: 2 rows  2 cols
+2025-06-13 20:33:56 | INFO | ✅ Predictions generated: 2 rows
+2025-06-13 20:33:56 | INFO | 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-57/test_cli_run1/predictions.parquet
+2025-06-13 20:36:21 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 20:36:21 | INFO | Active config: logs={} inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', static_team_csv='', true_lines_dir='', recent_predictions_dir='', combined_preds_dir='', gamelogs_source='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-58/test_cli_run1/context.parquet') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-58/test_cli_run1/predictions.parquet', root='') pipeline={} overwrite_policy='force' model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-58/test_cli_run1/dummy_model.joblib' required_features=['x1', 'x2'] model={} paths={} cli={'overwrite_policy': 'force'} flags={}
+2025-06-13 20:36:21 | INFO | ✅ Context features loaded: 2 rows  2 cols
+2025-06-13 20:36:22 | INFO | ✅ Predictions generated: 2 rows
+2025-06-13 20:36:22 | INFO | 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-58/test_cli_run1/predictions.parquet
+2025-06-13 21:06:50 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 21:06:50 | INFO | Active config: logs={'pipeline_log': 'logs/pipeline.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='outputs/predictions/final.parquet', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True} rolling_windows={'windows': [{'days': 7, 'stats': ['hits', 'HR', 'RBI', 'SB']}, {'days': 30, 'stats': ['hits', 'HR', 'RBI', 'SB', 'BB', 'K']}]} logging={'max_bytes': 5000000, 'backup_count': 3, 'level': 'INFO'}
+2025-06-13 21:06:50 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 106, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+
+2025-06-13 21:51:27 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 21:51:27 | INFO | Active config: logs={} inputs=InputsConfig(recent_gamelogs_csv='', static_player_csv='', static_team_csv='', true_lines_dir='', recent_predictions_dir='', combined_preds_dir='', gamelogs_source='', context_features='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_cli_run1/context.parquet') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_cli_run1/predictions.parquet', root='') pipeline={} overwrite_policy='force' model_path='/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_cli_run1/dummy_model.joblib' required_features=['x1', 'x2'] model={} paths={} cli={'overwrite_policy': 'force'} flags={}
+2025-06-13 21:51:27 | INFO | ✅ Context features loaded: 2 rows  2 cols
+2025-06-13 21:51:28 | INFO | ✅ Predictions generated: 2 rows
+2025-06-13 21:51:28 | INFO | 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_cli_run1/predictions.parquet

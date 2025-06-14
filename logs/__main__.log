@@ -1,0 +1,204 @@
+2025-06-13 15:27:52 - __main__ - ERROR - An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 16:20:32 - __main__ - ERROR - Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 39, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 19:34:57 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 19:34:57 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 109, in main
+    out_dir = Path(cfg.outputs.dir).resolve() / "true_lines"
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'dir'
+2025-06-13 20:01:41 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 20:01:42 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for Config
+logs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 20:02:28 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for Config
+logs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 20:12:34 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for Config
+logs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:22 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 20:13:23 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for Config
+logs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:33:55 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 20:33:56 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 67, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:36:20 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 20:36:22 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 67, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 21:06:49 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 21:06:50 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 109, in main
+    out_dir = Path(cfg.outputs.dir).resolve() / "true_lines"
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'dir'
+2025-06-13 21:51:27 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 21:51:28 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 106, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 67, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
+inputs
+  Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing

@@ -26,7 +26,7 @@ def download_static_csvs(cfg: dict) -> None:
             continue
 
         output_path = static_dir / f"{name}.csv"
-        resolved_output = resolve_output_path(str(output_path), cfg)
+        resolved_output = resolve_output_path(str(output_path), cfg.get("overwrite_policy", "error"))
 
         if not handle_overwrite(resolved_output, cfg):
             LOGGER.warning(f"Skipping existing file due to overwrite policy: {resolved_output}")

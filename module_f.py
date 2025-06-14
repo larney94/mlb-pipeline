@@ -39,7 +39,7 @@ def main():
         logger = get_rotating_logger("module_f", cfg)
 
         input_path = Path(cfg.outputs.consolidated_gamelogs_path).resolve()
-        output_path = resolve_output_path(cfg.outputs.filtered_gamelogs_path, cfg)
+        output_path = resolve_output_path(cfg.outputs.filtered_gamelogs_path, cfg.overwrite_policy)
         ensure_dir(output_path.parent)
 
         if not input_path.exists():

@@ -1,0 +1,49 @@
+2025-06-13 20:01:40 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:01:40 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 20:01:40 | INFO | Merged context features: 4 records.
+2025-06-13 20:01:40 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-49/test_successful_consolidation0/context_features.parquet
+2025-06-13 20:01:41 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:01:41 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 20:01:41 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-49/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.
+2025-06-13 20:02:26 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:02:26 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 20:02:26 | INFO | Merged context features: 4 records.
+2025-06-13 20:02:26 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-50/test_successful_consolidation0/context_features.parquet
+2025-06-13 20:02:27 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:02:27 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 20:02:27 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-50/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.
+2025-06-13 20:12:33 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:12:33 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 20:12:33 | INFO | Merged context features: 4 records.
+2025-06-13 20:12:33 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-51/test_successful_consolidation0/context_features.parquet
+2025-06-13 20:12:33 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:12:33 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 20:12:33 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-51/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.
+2025-06-13 20:13:21 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:13:21 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 20:13:21 | INFO | Merged context features: 4 records.
+2025-06-13 20:13:21 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_successful_consolidation0/context_features.parquet
+2025-06-13 20:13:21 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:13:21 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 20:13:21 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.
+2025-06-13 20:33:54 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:33:54 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 20:33:54 | INFO | Merged context features: 4 records.
+2025-06-13 20:33:54 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-57/test_successful_consolidation0/context_features.parquet
+2025-06-13 20:33:54 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:33:54 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 20:33:54 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-57/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.
+2025-06-13 20:36:20 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:36:20 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 20:36:20 | INFO | Merged context features: 4 records.
+2025-06-13 20:36:20 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-58/test_successful_consolidation0/context_features.parquet
+2025-06-13 20:36:20 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 20:36:20 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 20:36:20 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-58/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.
+2025-06-13 21:51:26 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 21:51:26 | INFO | Loaded elo_ratings.csv with 2 records.
+2025-06-13 21:51:26 | INFO | Merged context features: 4 records.
+2025-06-13 21:51:26 | INFO | Wrote consolidated contextual features to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_successful_consolidation0/context_features.parquet
+2025-06-13 21:51:26 | INFO | Loaded park_factors.csv with 2 records.
+2025-06-13 21:51:26 | ERROR | Error processing elo_ratings.csv: Missing required columns in elo_ratings.csv: ['team_id']
+2025-06-13 21:51:26 | WARNING | Output file /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_skip_overwrite_policy0/context_features.parquet exists. Skipping due to 'warn' policy.

@@ -36,7 +36,7 @@ def main():
         cfg = load_config(args.config_path)
         cfg = apply_cli_overrides(cfg)
 
-        output_path = resolve_output_path(cfg.outputs.full_feature_set, cfg.model_dump(), args.overwrite_policy)
+        output_path = resolve_output_path(cfg.outputs.full_feature_set, args.overwrite_policy)
         ensure_dir(output_path.parent)
 
         logger = get_rotating_logger("combine_features", log_dir="logs")

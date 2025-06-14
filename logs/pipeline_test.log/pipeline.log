@@ -1,0 +1,119 @@
+2025-06-13 17:09:33 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:09:33 | INFO | inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') logs=LogsConfig(pipeline_log='logs/pipeline_test.log') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:09:33 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:09:33 | ERROR | Unhandled error in module A: 'Namespace' object has no attribute 'force'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/pipeline.py", line 18, in run_module
+    if not args.force and expected_output_exists(mod_code, cfg):
+AttributeError: 'Namespace' object has no attribute 'force'
+2025-06-13 17:09:33 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-13 17:09:33 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 17:09:33 | INFO |  - Module A: FAILED
+2025-06-13 17:09:33 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:09:33 | INFO | inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') logs=LogsConfig(pipeline_log='logs/pipeline_test.log') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:09:33 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:11:25 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:11:25 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:11:25 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:11:25 | ERROR | Unhandled error in module A: 'Namespace' object has no attribute 'force'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/pipeline.py", line 18, in run_module
+    if not args.force and expected_output_exists(mod_code, cfg):
+AttributeError: 'Namespace' object has no attribute 'force'
+2025-06-13 17:11:25 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-13 17:11:25 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 17:11:25 | INFO |  - Module A: FAILED
+2025-06-13 17:11:25 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:11:25 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:11:25 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:14:36 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:14:36 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:14:36 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:14:36 | INFO | ▶️ Running module A...
+2025-06-13 17:14:37 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 17:14:38 | ERROR | Module A failed via subprocess.
+2025-06-13 17:14:38 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-13 17:14:38 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 17:14:38 | INFO |  - Module A: FAILED
+2025-06-13 17:14:38 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:14:38 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:14:38 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:26:34 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:26:34 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:26:34 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:26:34 | ERROR | Unhandled error in module A: 'Namespace' object has no attribute 'force'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/pipeline.py", line 18, in run_module
+    if not args.force and expected_output_exists(mod_code, cfg):
+AttributeError: 'Namespace' object has no attribute 'force'
+2025-06-13 17:26:34 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-13 17:26:34 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 17:26:34 | INFO |  - Module A: FAILED
+2025-06-13 17:26:34 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:26:34 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:26:34 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:32:30 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:32:30 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:32:30 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:32:30 | INFO | ▶️ Running module A...
+2025-06-13 17:32:31 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 17:32:32 | ERROR | Module A failed via subprocess.
+2025-06-13 17:32:32 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-13 17:32:32 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 17:32:32 | INFO |  - Module A: FAILED
+2025-06-13 17:32:32 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:32:32 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:32:32 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:34:19 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:34:19 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:34:19 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:34:19 | INFO | ▶️ Running module A...
+2025-06-13 17:34:20 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 17:34:21 | ERROR | Module A failed via subprocess.
+2025-06-13 17:34:21 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-13 17:34:21 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 17:34:21 | INFO |  - Module A: FAILED
+2025-06-13 17:34:21 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:34:21 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:34:21 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:37:49 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:37:49 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:37:49 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:37:49 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:37:49 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:39:53 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:39:53 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:39:53 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:39:53 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:39:53 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 17:46:58 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:46:58 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:46:58 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 17:46:58 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 17:46:58 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:01:42 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:01:42 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:01:42 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:01:42 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:01:42 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:02:28 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:02:28 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:02:28 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:02:28 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:02:28 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:12:34 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:12:34 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:12:34 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:12:34 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:12:34 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:13:23 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:13:23 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:13:23 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:13:23 | INFO | logs=LogsConfig(pipeline_log='logs/pipeline_test.log') inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline=PipelineConfig(concurrency=2, continue_on_failure=True) overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:13:23 | INFO | 🧩 Final module sequence: ['A', 'B']

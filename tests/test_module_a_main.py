@@ -85,4 +85,3 @@ def test_integration(tmp_path, monkeypatch):
 
     assert (tmp_path / "mlb_all_batting_gamelogs_2024.csv").exists()
     assert (tmp_path / "mlb_all_pitching_gamelogs_2024.csv").exists()
-

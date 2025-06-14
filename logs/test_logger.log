@@ -1,0 +1,15 @@
+2025-06-13 20:01:42 | WARNING | testing logger warning
+2025-06-13 20:01:42 | INFO | Logger test message
+2025-06-13 20:02:28 | WARNING | testing logger warning
+2025-06-13 20:02:28 | INFO | Logger test message
+2025-06-13 20:12:34 | WARNING | testing logger warning
+2025-06-13 20:12:34 | INFO | Logger test message
+2025-06-13 20:13:22 | WARNING | testing logger warning
+2025-06-13 20:13:22 | INFO | Logger test message
+2025-06-13 20:33:31 | WARNING | testing logger warning
+2025-06-13 20:33:56 | WARNING | testing logger warning
+2025-06-13 20:33:56 | INFO | Logger test message
+2025-06-13 20:36:22 | WARNING | testing logger warning
+2025-06-13 20:36:22 | INFO | Logger test message
+2025-06-13 21:51:28 | WARNING | testing logger warning
+2025-06-13 21:51:28 | INFO | Logger test message

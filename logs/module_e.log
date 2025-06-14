@@ -1,0 +1,16 @@
+2025-06-13 19:34:56 | INFO | Module E – Fetch Starters – started
+2025-06-13 20:01:41 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 20:01:41 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 20:02:27 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 20:02:27 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 20:12:33 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 20:12:33 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 20:13:21 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 20:13:21 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 20:33:55 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 20:33:55 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 20:36:20 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 20:36:20 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 21:06:48 | INFO | Module E – Fetch Starters – started
+2025-06-13 21:51:26 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
+2025-06-13 21:51:26 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.

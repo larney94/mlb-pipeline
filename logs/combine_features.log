@@ -1,0 +1,1016 @@
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:01:41 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:02:27 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:12:33 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...': './bad_out.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpl7n8c_zb/test_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpl7n8c_zb/recent_gamelogs.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpl7n8c_zb/static_player.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpl7n8c_zb/context
+2025-06-13 20:33:30 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:30 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:30 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpl7n8c_zb/output/full_feature_set.parquet
+2025-06-13 20:33:30 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpc60uable/bad_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /Users/lukearney/Full MLB Project/missing_dir
+2025-06-13 20:33:30 | ERROR | Error in combine_features.py: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 56, in main
+    gamelogs_df = load_file(gamelogs_path, "csv")
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 22, in load_file
+    return pd.read_csv(path)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpnw5d2hya/bad_schema_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpnw5d2hya/gamelogs.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpnw5d2hya/players.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpnw5d2hya/context
+2025-06-13 20:33:30 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:30 | ERROR | Error in combine_features.py: 'player_id'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 69, in main
+    merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/frame.py", line 10832, in merge
+    return merge(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'player_id'
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpo4l55l55/test_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpo4l55l55/recent_gamelogs.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpo4l55l55/static_player.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpo4l55l55/context
+2025-06-13 20:33:30 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:30 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:30 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpo4l55l55/output/full_feature_set.parquet
+2025-06-13 20:33:30 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpskwsi9oc/test_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpskwsi9oc/recent_gamelogs.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpskwsi9oc/static_player.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpskwsi9oc/context
+2025-06-13 20:33:30 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:30 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:30 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpskwsi9oc/output/full_feature_set.parquet
+2025-06-13 20:33:30 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpjwvae0jx/dupe_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpjwvae0jx/gamelogs.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpjwvae0jx/players.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpjwvae0jx/context
+2025-06-13 20:33:30 | INFO | Loaded gamelogs: 2 rows
+2025-06-13 20:33:30 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:30 | INFO | Final merged row count (after join): 2
+2025-06-13 20:33:30 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpjwvae0jx/output/full_feature_set.parquet
+2025-06-13 20:33:30 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:30 | INFO | Starting combine_features.py
+2025-06-13 20:33:30 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp01o875hd/test_config.yaml
+2025-06-13 20:33:30 | INFO | Overwrite policy: force
+2025-06-13 20:33:30 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp01o875hd/recent_gamelogs.csv
+2025-06-13 20:33:30 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp01o875hd/static_player.csv
+2025-06-13 20:33:30 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp01o875hd/context
+2025-06-13 20:33:30 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:30 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:30 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:30 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp01o875hd/output/full_feature_set.parquet
+2025-06-13 20:33:30 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:54 | INFO | Starting combine_features.py
+2025-06-13 20:33:54 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpe7xkw4js/test_config.yaml
+2025-06-13 20:33:54 | INFO | Overwrite policy: force
+2025-06-13 20:33:54 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpe7xkw4js/recent_gamelogs.csv
+2025-06-13 20:33:54 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpe7xkw4js/static_player.csv
+2025-06-13 20:33:54 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpe7xkw4js/context
+2025-06-13 20:33:54 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:54 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:54 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpe7xkw4js/output/full_feature_set.parquet
+2025-06-13 20:33:54 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:54 | INFO | Starting combine_features.py
+2025-06-13 20:33:54 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4_os8bab/bad_config.yaml
+2025-06-13 20:33:54 | INFO | Overwrite policy: force
+2025-06-13 20:33:54 | INFO | Reading gamelogs from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 20:33:54 | INFO | Reading static player info from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 20:33:54 | INFO | Reading context features from dir: /Users/lukearney/Full MLB Project/missing_dir
+2025-06-13 20:33:54 | ERROR | Error in combine_features.py: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 56, in main
+    gamelogs_df = load_file(gamelogs_path, "csv")
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 22, in load_file
+    return pd.read_csv(path)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+2025-06-13 20:33:54 | INFO | Starting combine_features.py
+2025-06-13 20:33:54 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpr49z_w_y/bad_schema_config.yaml
+2025-06-13 20:33:54 | INFO | Overwrite policy: force
+2025-06-13 20:33:54 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpr49z_w_y/gamelogs.csv
+2025-06-13 20:33:54 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpr49z_w_y/players.csv
+2025-06-13 20:33:54 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpr49z_w_y/context
+2025-06-13 20:33:54 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:54 | ERROR | Error in combine_features.py: 'player_id'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 69, in main
+    merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/frame.py", line 10832, in merge
+    return merge(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'player_id'
+2025-06-13 20:33:54 | INFO | Starting combine_features.py
+2025-06-13 20:33:54 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpiql85wzk/test_config.yaml
+2025-06-13 20:33:54 | INFO | Overwrite policy: force
+2025-06-13 20:33:54 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpiql85wzk/recent_gamelogs.csv
+2025-06-13 20:33:54 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpiql85wzk/static_player.csv
+2025-06-13 20:33:54 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpiql85wzk/context
+2025-06-13 20:33:54 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:54 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:54 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpiql85wzk/output/full_feature_set.parquet
+2025-06-13 20:33:54 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:54 | INFO | Starting combine_features.py
+2025-06-13 20:33:54 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5esn5_8s/test_config.yaml
+2025-06-13 20:33:54 | INFO | Overwrite policy: force
+2025-06-13 20:33:54 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5esn5_8s/recent_gamelogs.csv
+2025-06-13 20:33:54 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5esn5_8s/static_player.csv
+2025-06-13 20:33:54 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5esn5_8s/context
+2025-06-13 20:33:54 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:54 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:54 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:54 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5esn5_8s/output/full_feature_set.parquet
+2025-06-13 20:33:54 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:55 | INFO | Starting combine_features.py
+2025-06-13 20:33:55 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesk8md46/dupe_config.yaml
+2025-06-13 20:33:55 | INFO | Overwrite policy: force
+2025-06-13 20:33:55 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesk8md46/gamelogs.csv
+2025-06-13 20:33:55 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesk8md46/players.csv
+2025-06-13 20:33:55 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesk8md46/context
+2025-06-13 20:33:55 | INFO | Loaded gamelogs: 2 rows
+2025-06-13 20:33:55 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:55 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:55 | INFO | Final merged row count (after join): 2
+2025-06-13 20:33:55 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesk8md46/output/full_feature_set.parquet
+2025-06-13 20:33:55 | INFO | combine_features.py completed successfully
+2025-06-13 20:33:55 | INFO | Starting combine_features.py
+2025-06-13 20:33:55 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp38uuu6al/test_config.yaml
+2025-06-13 20:33:55 | INFO | Overwrite policy: force
+2025-06-13 20:33:55 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp38uuu6al/recent_gamelogs.csv
+2025-06-13 20:33:55 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp38uuu6al/static_player.csv
+2025-06-13 20:33:55 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp38uuu6al/context
+2025-06-13 20:33:55 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:33:55 | INFO | Loaded static players: 1 rows
+2025-06-13 20:33:55 | INFO | Loaded context: 1 rows
+2025-06-13 20:33:55 | INFO | Final merged row count (after join): 1
+2025-06-13 20:33:55 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp38uuu6al/output/full_feature_set.parquet
+2025-06-13 20:33:55 | INFO | combine_features.py completed successfully
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpqy82md05/test_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpqy82md05/recent_gamelogs.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpqy82md05/static_player.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpqy82md05/context
+2025-06-13 20:36:20 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded static players: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded context: 1 rows
+2025-06-13 20:36:20 | INFO | Final merged row count (after join): 1
+2025-06-13 20:36:20 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpqy82md05/output/full_feature_set.parquet
+2025-06-13 20:36:20 | INFO | combine_features.py completed successfully
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpzfv37_vg/bad_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /Users/lukearney/Full MLB Project/missing_dir
+2025-06-13 20:36:20 | ERROR | Error in combine_features.py: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 56, in main
+    gamelogs_df = load_file(gamelogs_path, "csv")
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 22, in load_file
+    return pd.read_csv(path)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpb6t1a37s/bad_schema_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpb6t1a37s/gamelogs.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpb6t1a37s/players.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpb6t1a37s/context
+2025-06-13 20:36:20 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded static players: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded context: 1 rows
+2025-06-13 20:36:20 | ERROR | Error in combine_features.py: 'player_id'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 69, in main
+    merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/frame.py", line 10832, in merge
+    return merge(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'player_id'
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp_yxb4d4u/test_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp_yxb4d4u/recent_gamelogs.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp_yxb4d4u/static_player.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp_yxb4d4u/context
+2025-06-13 20:36:20 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded static players: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded context: 1 rows
+2025-06-13 20:36:20 | INFO | Final merged row count (after join): 1
+2025-06-13 20:36:20 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp_yxb4d4u/output/full_feature_set.parquet
+2025-06-13 20:36:20 | INFO | combine_features.py completed successfully
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesan22e0/test_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesan22e0/recent_gamelogs.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesan22e0/static_player.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesan22e0/context
+2025-06-13 20:36:20 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded static players: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded context: 1 rows
+2025-06-13 20:36:20 | INFO | Final merged row count (after join): 1
+2025-06-13 20:36:20 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpesan22e0/output/full_feature_set.parquet
+2025-06-13 20:36:20 | INFO | combine_features.py completed successfully
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpwb3hz70r/dupe_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpwb3hz70r/gamelogs.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpwb3hz70r/players.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpwb3hz70r/context
+2025-06-13 20:36:20 | INFO | Loaded gamelogs: 2 rows
+2025-06-13 20:36:20 | INFO | Loaded static players: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded context: 1 rows
+2025-06-13 20:36:20 | INFO | Final merged row count (after join): 2
+2025-06-13 20:36:20 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpwb3hz70r/output/full_feature_set.parquet
+2025-06-13 20:36:20 | INFO | combine_features.py completed successfully
+2025-06-13 20:36:20 | INFO | Starting combine_features.py
+2025-06-13 20:36:20 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpvsn36jek/test_config.yaml
+2025-06-13 20:36:20 | INFO | Overwrite policy: force
+2025-06-13 20:36:20 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpvsn36jek/recent_gamelogs.csv
+2025-06-13 20:36:20 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpvsn36jek/static_player.csv
+2025-06-13 20:36:20 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpvsn36jek/context
+2025-06-13 20:36:20 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded static players: 1 rows
+2025-06-13 20:36:20 | INFO | Loaded context: 1 rows
+2025-06-13 20:36:20 | INFO | Final merged row count (after join): 1
+2025-06-13 20:36:20 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpvsn36jek/output/full_feature_set.parquet
+2025-06-13 20:36:20 | INFO | combine_features.py completed successfully
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5jqefjye/test_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5jqefjye/recent_gamelogs.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5jqefjye/static_player.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5jqefjye/context
+2025-06-13 21:51:26 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded static players: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded context: 1 rows
+2025-06-13 21:51:26 | INFO | Final merged row count (after join): 1
+2025-06-13 21:51:26 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp5jqefjye/output/full_feature_set.parquet
+2025-06-13 21:51:26 | INFO | combine_features.py completed successfully
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmplaodei8r/bad_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /Users/lukearney/Full MLB Project/missing.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /Users/lukearney/Full MLB Project/missing_dir
+2025-06-13 21:51:26 | ERROR | Error in combine_features.py: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 56, in main
+    gamelogs_df = load_file(gamelogs_path, "csv")
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 22, in load_file
+    return pd.read_csv(path)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lukearney/Full MLB Project/missing.csv'
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpgzwa7zh2/bad_schema_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpgzwa7zh2/gamelogs.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpgzwa7zh2/players.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpgzwa7zh2/context
+2025-06-13 21:51:26 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded static players: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded context: 1 rows
+2025-06-13 21:51:26 | ERROR | Error in combine_features.py: 'player_id'
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 69, in main
+    merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/frame.py", line 10832, in merge
+    return merge(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 1297, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pandas/core/generic.py", line 1911, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'player_id'
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpopgesygt/test_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpopgesygt/recent_gamelogs.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpopgesygt/static_player.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpopgesygt/context
+2025-06-13 21:51:26 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded static players: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded context: 1 rows
+2025-06-13 21:51:26 | INFO | Final merged row count (after join): 1
+2025-06-13 21:51:26 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpopgesygt/output/full_feature_set.parquet
+2025-06-13 21:51:26 | INFO | combine_features.py completed successfully
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpufxb5k52/test_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpufxb5k52/recent_gamelogs.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpufxb5k52/static_player.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpufxb5k52/context
+2025-06-13 21:51:26 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded static players: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded context: 1 rows
+2025-06-13 21:51:26 | INFO | Final merged row count (after join): 1
+2025-06-13 21:51:26 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpufxb5k52/output/full_feature_set.parquet
+2025-06-13 21:51:26 | INFO | combine_features.py completed successfully
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmph8q75mgx/dupe_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmph8q75mgx/gamelogs.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmph8q75mgx/players.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmph8q75mgx/context
+2025-06-13 21:51:26 | INFO | Loaded gamelogs: 2 rows
+2025-06-13 21:51:26 | INFO | Loaded static players: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded context: 1 rows
+2025-06-13 21:51:26 | INFO | Final merged row count (after join): 2
+2025-06-13 21:51:26 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmph8q75mgx/output/full_feature_set.parquet
+2025-06-13 21:51:26 | INFO | combine_features.py completed successfully
+2025-06-13 21:51:26 | INFO | Starting combine_features.py
+2025-06-13 21:51:26 | INFO | Config path: /var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4j07uj3l/test_config.yaml
+2025-06-13 21:51:26 | INFO | Overwrite policy: force
+2025-06-13 21:51:26 | INFO | Reading gamelogs from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4j07uj3l/recent_gamelogs.csv
+2025-06-13 21:51:26 | INFO | Reading static player info from: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4j07uj3l/static_player.csv
+2025-06-13 21:51:26 | INFO | Reading context features from dir: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4j07uj3l/context
+2025-06-13 21:51:26 | INFO | Loaded gamelogs: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded static players: 1 rows
+2025-06-13 21:51:26 | INFO | Loaded context: 1 rows
+2025-06-13 21:51:26 | INFO | Final merged row count (after join): 1
+2025-06-13 21:51:26 | INFO | Writing output to: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4j07uj3l/output/full_feature_set.parquet
+2025-06-13 21:51:26 | INFO | combine_features.py completed successfully

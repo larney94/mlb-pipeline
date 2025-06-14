@@ -1,0 +1,82 @@
+2025-06-13 20:36:22 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:36:22 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:36:22 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:36:22 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:36:22 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:39:06 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:39:06 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:39:06 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:42:27 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:42:27 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:42:27 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:42:27 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 20:43:21 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:43:21 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:43:21 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:43:21 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 20:47:08 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:47:08 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:47:08 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:49:53 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:49:53 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:49:53 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 20:49:53 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 20:52:39 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 20:52:39 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 20:52:39 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 21:00:23 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 21:00:23 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 21:00:23 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 21:00:23 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 21:00:23 | INFO |  - Module B: SUCCESS
+2025-06-13 21:06:47 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 21:06:47 | INFO | logs={'pipeline_log': 'logs/pipeline.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='outputs/predictions/final.parquet', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True} rolling_windows={'windows': [{'days': 7, 'stats': ['hits', 'HR', 'RBI', 'SB']}, {'days': 30, 'stats': ['hits', 'HR', 'RBI', 'SB', 'BB', 'K']}]} logging={'max_bytes': 5000000, 'backup_count': 3, 'level': 'INFO'}
+2025-06-13 21:06:47 | INFO | 🧩 Final module sequence: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+2025-06-13 21:06:47 | INFO | ▶️  Running module A…
+2025-06-13 21:06:47 | INFO | ▶️  Running module B…
+2025-06-13 21:06:47 | INFO | ▶️  Running module C…
+2025-06-13 21:06:47 | INFO | ▶️  Running module D…
+2025-06-13 21:06:47 | WARNING | Import failed for B: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:47 | ERROR | Module B failed via subprocess.
+2025-06-13 21:06:47 | INFO | ▶️  Running module E…
+2025-06-13 21:06:47 | WARNING | Import failed for D: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:47 | WARNING | Import failed for C: module 'module_c' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 21:06:47 | WARNING | Import failed for E: module 'module_e' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 21:06:48 | ERROR | Module D failed via subprocess.
+2025-06-13 21:06:48 | INFO | ▶️  Running module F…
+2025-06-13 21:06:48 | WARNING | Import failed for F: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:48 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:48 | ERROR | Module C failed via subprocess.
+2025-06-13 21:06:48 | INFO | ▶️  Running module G…
+2025-06-13 21:06:48 | WARNING | Import failed for G: module 'module_g' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 21:06:48 | ERROR | Module E failed via subprocess.
+2025-06-13 21:06:48 | INFO | ▶️  Running module H…
+2025-06-13 21:06:48 | WARNING | Import failed for H: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:49 | ERROR | Module G failed via subprocess.
+2025-06-13 21:06:49 | INFO | ▶️  Running module I…
+2025-06-13 21:06:49 | ERROR | Module F failed via subprocess.
+2025-06-13 21:06:49 | INFO | ▶️  Running module J…
+2025-06-13 21:06:49 | WARNING | Import failed for J: No module named 'module_j'. Using subprocess fallback.
+2025-06-13 21:06:49 | INFO | ✅ Module H completed in 0.65s
+2025-06-13 21:06:49 | INFO | ▶️  Running module K…
+2025-06-13 21:06:49 | WARNING | Import failed for K: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:49 | ERROR | Module J failed via subprocess.
+2025-06-13 21:06:49 | INFO | ▶️  Running module L…
+2025-06-13 21:06:49 | WARNING | Import failed for I: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:49 | WARNING | Import failed for L: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:06:50 | ERROR | Module A failed via subprocess.
+2025-06-13 21:06:50 | INFO | ✅ Module K completed in 0.86s
+2025-06-13 21:06:50 | ERROR | Module I failed via subprocess.
+2025-06-13 21:06:50 | ERROR | Module L failed via subprocess.
+2025-06-13 21:51:28 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 21:51:28 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 21:51:28 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 21:51:28 | INFO | logs={'pipeline_log': 'logs/pipeline_test.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/player.csv', static_team_csv='outputs/static/team.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/preds', combined_preds_dir='outputs/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='', full_feature_set='', model_predictions='', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={} paths={} cli={} flags={}
+2025-06-13 21:51:28 | INFO | 🧩 Final module sequence: ['A', 'B']
+2025-06-13 21:51:28 | INFO | 
+📊 Pipeline Summary:
+2025-06-13 21:51:28 | INFO |  - Module B: SUCCESS

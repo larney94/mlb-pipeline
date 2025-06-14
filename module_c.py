@@ -70,7 +70,7 @@ if __name__ == "__main__":
     context_dir = Path(cfg["outputs"]["context_dir"]).resolve()
     ensure_dir(context_dir)
 
-    output_path = resolve_output_path(context_dir / "context_features.parquet", cfg)
+    output_path = resolve_output_path(context_dir / "context_features.parquet", cfg.overwrite_policy)
 
     alias_map = {
         "teamID": "team_id",

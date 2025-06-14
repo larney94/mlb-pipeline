@@ -4,10 +4,25 @@
 # Supports modules A–L, CLI overrides, overwrite policy
 # ────────────────────────────────────────────────
 
+logs:
+  pipeline_log: logs/pipeline.log
+
+pipeline:
+  concurrency: 2
+  continue_on_failure: true
+
+overwrite_policy: warn
+
 inputs:
   seasons: [2022, 2023]
   recent_gamelogs_csv: outputs/gamelogs/recent_gamelogs.csv
   static_player_csv: outputs/static/static_player_metadata.csv
+  static_team_csv: outputs/static/static_team_metadata.csv
+  true_lines_dir: outputs/true_lines
+  recent_predictions_dir: outputs/predictions/recent
+  combined_preds_dir: outputs/predictions/combined
+  gamelogs_source: statsapi
+  context_features: ""
   static_csvs:
     - name: teams
       url: https://example.com/teams.csv
@@ -23,6 +38,8 @@ outputs:
   full_feature_set: outputs/features/full_feature_set.parquet
   consolidated_predictions: outputs/predictions/consolidated_predictions.parquet
   model_dir: outputs/models/
+  model_predictions: outputs/predictions/final.parquet
+  root: outputs
   logs_dir: logs/
 
 rolling_windows:
@@ -52,3 +69,6 @@ logging:
 flags:
   use_cached_data: true
   save_predictions: true
+
+required_features: []
+paths: {}

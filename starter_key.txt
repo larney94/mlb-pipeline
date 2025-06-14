@@ -1,0 +1,29 @@
+# ⬇️ Go to the project root
+cd ~/Full\ MLB\ Project/
+
+# 🧪 Activate the virtual environment
+source venv_mlb/bin/activate
+
+# ✅ Ensure required packages are installed
+pip install -r requirements.txt || pip install pandas pytest statsapi
+
+# 🔧 Create pytest.ini to ensure module-level imports work
+echo -e "[pytest]\npythonpath = ." > pytest.ini
+
+# 🧹 Clean up clutter from commits (optional but highly recommended)
+echo -e ".DS_Store\n__pycache__/\n*.pyc\nInstructions.zip" >> .gitignore
+git rm --cached -r tests/.DS_Store Instructions.zip 2>/dev/null || true
+git add .gitignore
+git commit -m "🔧 Clean up: ignore .DS_Store, pycache, ZIP artifacts" || echo "No cleanup commit needed"
+
+# 🧪 Run all tests for current module (replace filename as needed)
+PYTHONPATH=. pytest -v tests/test_module_e.py
+
+# 💾 Save current state of validated module
+git add module_e.py tests/test_module_e.py
+git commit -m "✅ Fully validated Module E with 5 comprehensive tests for StatsAPI starters fetch"
+git tag module-e-validated
+git push --follow-tags
+
+
+PYTHONPATH=. pytest -v tests/test_pipeline.py

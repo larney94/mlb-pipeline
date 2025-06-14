@@ -1,0 +1,20 @@
+logs:
+  pipeline_log: logs/pipeline_test.log
+
+outputs:
+  root: outputs
+
+overwrite_policy: warn
+
+pipeline:
+  concurrency: 2
+  continue_on_failure: true
+
+inputs:
+  recent_gamelogs_csv: outputs/gamelogs/recent_gamelogs.csv
+  static_player_csv: outputs/static/player.csv
+  static_team_csv: outputs/static/team.csv
+  true_lines_dir: outputs/true_lines
+  recent_predictions_dir: outputs/preds
+  combined_preds_dir: outputs/combined
+  gamelogs_source: statsapi

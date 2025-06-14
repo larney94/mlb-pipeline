@@ -1,0 +1,1138 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.13, pytest-8.2.2, pluggy-1.6.0 -- /Users/lukearney/Full MLB Project/venv_mlb/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/lukearney/Full MLB Project
+configfile: pytest.ini
+plugins: anyio-4.9.0, mock-3.14.0
+collecting ... collected 65 items
+
+tests/test_module_a_main.py::test_fetch_gamelogs PASSED                  [  1%]
+tests/test_module_a_main.py::test_write_csv PASSED                       [  3%]
+tests/test_module_a_main.py::test_integration PASSED                     [  4%]
+tests/test_module_b.py::test_download_static_csvs_success FAILED         [  6%]
+tests/test_module_b.py::test_download_static_csvs_missing_url PASSED     [  7%]
+tests/test_module_b.py::test_download_static_csvs_overwrite_policy_warn FAILED [  9%]
+tests/test_module_b.py::test_download_static_csvs_failed_download FAILED [ 10%]
+tests/test_module_c.py::test_successful_consolidation PASSED             [ 12%]
+tests/test_module_c.py::test_missing_required_column PASSED              [ 13%]
+tests/test_module_c.py::test_skip_overwrite_policy PASSED                [ 15%]
+tests/test_module_c.py::test_error_overwrite_policy PASSED               [ 16%]
+tests/test_module_d.py::test_combine_success FAILED                      [ 18%]
+tests/test_module_d.py::test_missing_input_file PASSED                   [ 20%]
+tests/test_module_d.py::test_missing_join_column PASSED                  [ 21%]
+tests/test_module_d.py::test_schema_mismatch_columns FAILED              [ 23%]
+tests/test_module_d.py::test_row_count_expected_post_merge FAILED        [ 24%]
+tests/test_module_d.py::test_duplicate_rows_detected_and_removed FAILED  [ 26%]
+tests/test_module_d.py::test_merge_key_null_check FAILED                 [ 27%]
+tests/test_module_e.py::test_write_starters_force PASSED                 [ 29%]
+tests/test_module_e.py::test_write_starters_warn PASSED                  [ 30%]
+tests/test_module_e.py::test_write_starters_error PASSED                 [ 32%]
+tests/test_module_e.py::test_fetch_starters_mocked PASSED                [ 33%]
+tests/test_module_e.py::test_empty_schedule PASSED                       [ 35%]
+tests/test_module_f.py::test_filter_data_removes_nulls_and_applies_thresholds PASSED [ 36%]
+tests/test_module_g.py::test_combine_predictions_logic PASSED            [ 38%]
+tests/test_module_g.py::test_schema_mismatch_error PASSED                [ 40%]
+tests/test_module_g.py::test_overwrite_policy_force PASSED               [ 41%]
+tests/test_module_g.py::test_overwrite_policy_error PASSED               [ 43%]
+tests/test_module_g.py::test_overwrite_policy_warn FAILED                [ 44%]
+tests/test_module_g.py::test_missing_config_key PASSED                   [ 46%]
+tests/test_module_g.py::test_logger_output PASSED                        [ 47%]
+tests/test_module_h.py::test_compute_context_features PASSED             [ 49%]
+tests/test_module_h.py::test_missing_columns_raises PASSED               [ 50%]
+tests/test_module_h.py::test_cli_run PASSED                              [ 52%]
+tests/test_module_i.py::test_run_predictions_logic PASSED                [ 53%]
+tests/test_module_i.py::test_overwrite_policy[force] PASSED              [ 55%]
+tests/test_module_i.py::test_overwrite_policy[warn] PASSED               [ 56%]
+tests/test_module_i.py::test_overwrite_policy[error] PASSED              [ 58%]
+tests/test_module_i.py::test_cli_run FAILED                              [ 60%]
+tests/test_module_i.py::test_logger_output PASSED                        [ 61%]
+tests/test_module_i.py::test_missing_required_column PASSED              [ 63%]
+tests/test_module_i.py::test_missing_config_key PASSED                   [ 64%]
+tests/test_module_i.py::test_ensure_dir PASSED                           [ 66%]
+tests/test_module_k.py::test_compute_vig_free_probs_logic PASSED         [ 67%]
+tests/test_module_k.py::test_ensure_dir PASSED                           [ 69%]
+tests/test_module_k.py::test_invalid_line_skipped PASSED                 [ 70%]
+tests/test_module_k.py::test_config_missing_key PASSED                   [ 72%]
+tests/test_module_k.py::test_logger_caplog PASSED                        [ 73%]
+tests/test_module_k.py::test_cli_subprocess PASSED                       [ 75%]
+tests/test_module_k.py::test_overwrite_policy_behavior[force] PASSED     [ 76%]
+tests/test_module_k.py::test_overwrite_policy_behavior[warn] PASSED      [ 78%]
+tests/test_module_k.py::test_overwrite_policy_behavior[error] PASSED     [ 80%]
+tests/test_module_l.py::test_parse_llm_response_valid PASSED             [ 81%]
+tests/test_module_l.py::test_parse_llm_response_fallback PASSED          [ 83%]
+tests/test_module_l.py::test_compute_confidence PASSED                   [ 84%]
+tests/test_module_l.py::test_template_render PASSED                      [ 86%]
+tests/test_module_l.py::test_llm_call_mocked PASSED                      [ 87%]
+tests/test_module_l.py::test_cli_subprocess_integration PASSED           [ 89%]
+tests/test_pipeline.py::test_import_pipeline PASSED                      [ 90%]
+tests/test_pipeline.py::test_dry_run_behavior PASSED                     [ 92%]
+tests/test_pipeline.py::test_overwrite_policy_warn PASSED                [ 93%]
+tests/test_pipeline.py::test_expected_output_exists PASSED               [ 95%]
+tests/test_pipeline.py::test_config_error PASSED                         [ 96%]
+tests/test_pipeline.py::test_continue_on_failure PASSED                  [ 98%]
+tests/test_pipeline.py::test_concurrency 
+
+=================================== FAILURES ===================================
+______________________ test_download_static_csvs_success _______________________
+
+dummy_config = {'outputs': {'static_dir': '/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/tes...orce', 'static_csvs': [{'name': 'test_dataset', 'url': 'https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv'}]}
+
+    def test_download_static_csvs_success(dummy_config):
+>       download_static_csvs(dummy_config)
+
+tests/test_module_b.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cfg = {'outputs': {'static_dir': '/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/tes...orce', 'static_csvs': [{'name': 'test_dataset', 'url': 'https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv'}]}
+
+    def download_static_csvs(cfg: dict) -> None:
+        static_dir = Path(cfg["outputs"]["static_dir"]).resolve()
+        static_dir.mkdir(parents=True, exist_ok=True)
+    
+        static_csvs = cfg.get("static_csvs", [])
+        if not static_csvs:
+            raise ValueError("No static_csvs defined in config")
+    
+        for entry in static_csvs:
+            name = entry.get("name")
+            url = entry.get("url")
+    
+            if not name or not url:
+                LOGGER.error(f"Invalid entry in static_csvs: {entry}")
+                continue
+    
+            output_path = static_dir / f"{name}.csv"
+>           resolved_output = resolve_output_path(str(output_path), cfg.overwrite_policy)
+E           AttributeError: 'dict' object has no attribute 'overwrite_policy'
+
+module_b.py:29: AttributeError
+_______________ test_download_static_csvs_overwrite_policy_warn ________________
+
+tmp_path = PosixPath('/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_download_static_csvs_over0')
+
+    def test_download_static_csvs_overwrite_policy_warn(tmp_path):
+        static_file = tmp_path / "static" / "test_dataset.csv"
+        static_file.parent.mkdir(parents=True, exist_ok=True)
+        static_file.write_text("existing content")
+    
+        cfg = {
+            "outputs": {"static_dir": str(static_file.parent)},
+            "overwrite_policy": "warn",
+            "static_csvs": [{
+                "name": "test_dataset",
+                "url": "https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv"
+            }]
+        }
+>       download_static_csvs(cfg)
+
+tests/test_module_b.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cfg = {'outputs': {'static_dir': '/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/tes...warn', 'static_csvs': [{'name': 'test_dataset', 'url': 'https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv'}]}
+
+    def download_static_csvs(cfg: dict) -> None:
+        static_dir = Path(cfg["outputs"]["static_dir"]).resolve()
+        static_dir.mkdir(parents=True, exist_ok=True)
+    
+        static_csvs = cfg.get("static_csvs", [])
+        if not static_csvs:
+            raise ValueError("No static_csvs defined in config")
+    
+        for entry in static_csvs:
+            name = entry.get("name")
+            url = entry.get("url")
+    
+            if not name or not url:
+                LOGGER.error(f"Invalid entry in static_csvs: {entry}")
+                continue
+    
+            output_path = static_dir / f"{name}.csv"
+>           resolved_output = resolve_output_path(str(output_path), cfg.overwrite_policy)
+E           AttributeError: 'dict' object has no attribute 'overwrite_policy'
+
+module_b.py:29: AttributeError
+__________________ test_download_static_csvs_failed_download ___________________
+
+mock_get = <MagicMock name='get' id='5064822784'>
+dummy_config = {'outputs': {'static_dir': '/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/tes...orce', 'static_csvs': [{'name': 'test_dataset', 'url': 'https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv'}]}
+
+    @patch("requests.get")
+    def test_download_static_csvs_failed_download(mock_get, dummy_config):
+        mock_get.side_effect = Exception("Download error")
+>       download_static_csvs(dummy_config)
+
+tests/test_module_b.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cfg = {'outputs': {'static_dir': '/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/tes...orce', 'static_csvs': [{'name': 'test_dataset', 'url': 'https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv'}]}
+
+    def download_static_csvs(cfg: dict) -> None:
+        static_dir = Path(cfg["outputs"]["static_dir"]).resolve()
+        static_dir.mkdir(parents=True, exist_ok=True)
+    
+        static_csvs = cfg.get("static_csvs", [])
+        if not static_csvs:
+            raise ValueError("No static_csvs defined in config")
+    
+        for entry in static_csvs:
+            name = entry.get("name")
+            url = entry.get("url")
+    
+            if not name or not url:
+                LOGGER.error(f"Invalid entry in static_csvs: {entry}")
+                continue
+    
+            output_path = static_dir / f"{name}.csv"
+>           resolved_output = resolve_output_path(str(output_path), cfg.overwrite_policy)
+E           AttributeError: 'dict' object has no attribute 'overwrite_policy'
+
+module_b.py:29: AttributeError
+_____________________________ test_combine_success _____________________________
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+>           cfg = load_config(args.config_path)
+
+module_d.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4z51iba9/test_config.yaml'
+
+    def load_config(path: str = "config.yaml") -> Config:
+        config_path = Path(path)
+        if not config_path.exists():
+            raise FileNotFoundError(f"Config file not found at: {path}")
+        with open(config_path, "r") as f:
+            raw = yaml.safe_load(f)
+>       return Config(**raw)
+E       pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+E       logs
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+E       pipeline
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+utils/config.py:60: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+test_env = (PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4z51iba9'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh...0gn/T/tmp4z51iba9/test_config.yaml'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp4z51iba9/output'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12de91b40>
+
+    def test_combine_success(test_env, monkeypatch):
+        tmp_dir, config_path, output_dir = test_env
+    
+        monkeypatch.setattr("sys.argv", [
+            "combine_features.py",
+            "--config-path", str(config_path),
+            "--overwrite-policy", "force"
+        ])
+    
+>       combine_main()
+
+tests/test_module_d.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+            cfg = load_config(args.config_path)
+            cfg = apply_cli_overrides(cfg)
+    
+            output_path = resolve_output_path(cfg.outputs.full_feature_set, args.overwrite_policy)
+            ensure_dir(output_path.parent)
+    
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.info("Starting combine_features.py")
+            logger.info(f"Config path: {args.config_path}")
+            logger.info(f"Overwrite policy: {args.overwrite_policy}")
+    
+            # Load data
+            gamelogs_path = Path(cfg.inputs.recent_gamelogs_csv).resolve()
+            players_path = Path(cfg.inputs.static_player_csv).resolve()
+            context_dir = Path(cfg.outputs.context_dir).resolve()
+    
+            logger.info(f"Reading gamelogs from: {gamelogs_path}")
+            logger.info(f"Reading static player info from: {players_path}")
+            logger.info(f"Reading context features from dir: {context_dir}")
+    
+            gamelogs_df = load_file(gamelogs_path, "csv")
+            players_df = load_file(players_path, "csv")
+            context_files = list(context_dir.glob("*.parquet"))
+    
+            if not context_files:
+                raise FileNotFoundError(f"No .parquet files found in {context_dir}")
+            context_df = pd.concat([pd.read_parquet(p) for p in context_files], ignore_index=True)
+    
+            logger.info(f"Loaded gamelogs: {gamelogs_df.shape[0]} rows")
+            logger.info(f"Loaded static players: {players_df.shape[0]} rows")
+            logger.info(f"Loaded context: {context_df.shape[0]} rows")
+    
+            # Merge step 1: gamelogs + players
+            merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+    
+            # Merge step 2: + context
+            merged_df = merged_df.merge(context_df, on=["player_id", "date"], how="left", validate="many_to_one")
+    
+            logger.info(f"Final merged row count (after join): {merged_df.shape[0]}")
+            merged_df.drop_duplicates(inplace=True)
+    
+            logger.info(f"Writing output to: {output_path}")
+            merged_df.to_parquet(output_path, index=False)
+            logger.info("combine_features.py completed successfully")
+    
+        except Exception as e:
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.exception(f"Error in combine_features.py: {e}")
+>           sys.exit(1)
+E           SystemExit: 1
+
+module_d.py:84: SystemExit
+----------------------------- Captured stderr call -----------------------------
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+------------------------------ Captured log call -------------------------------
+ERROR    combine_features:module_d.py:83 Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+_________________________ test_schema_mismatch_columns _________________________
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+>           cfg = load_config(args.config_path)
+
+module_d.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpkxm9_xgp/test_config.yaml'
+
+    def load_config(path: str = "config.yaml") -> Config:
+        config_path = Path(path)
+        if not config_path.exists():
+            raise FileNotFoundError(f"Config file not found at: {path}")
+        with open(config_path, "r") as f:
+            raw = yaml.safe_load(f)
+>       return Config(**raw)
+E       pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+E       logs
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+E       pipeline
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+utils/config.py:60: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+test_env = (PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpkxm9_xgp'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh...0gn/T/tmpkxm9_xgp/test_config.yaml'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpkxm9_xgp/output'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12e167d00>
+
+    def test_schema_mismatch_columns(test_env, monkeypatch):
+        tmp_dir, config_path, output_dir = test_env
+    
+        monkeypatch.setattr("sys.argv", [
+            "combine_features.py",
+            "--config-path", str(config_path),
+            "--overwrite-policy", "force"
+        ])
+    
+>       combine_main()
+
+tests/test_module_d.py:173: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+            cfg = load_config(args.config_path)
+            cfg = apply_cli_overrides(cfg)
+    
+            output_path = resolve_output_path(cfg.outputs.full_feature_set, args.overwrite_policy)
+            ensure_dir(output_path.parent)
+    
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.info("Starting combine_features.py")
+            logger.info(f"Config path: {args.config_path}")
+            logger.info(f"Overwrite policy: {args.overwrite_policy}")
+    
+            # Load data
+            gamelogs_path = Path(cfg.inputs.recent_gamelogs_csv).resolve()
+            players_path = Path(cfg.inputs.static_player_csv).resolve()
+            context_dir = Path(cfg.outputs.context_dir).resolve()
+    
+            logger.info(f"Reading gamelogs from: {gamelogs_path}")
+            logger.info(f"Reading static player info from: {players_path}")
+            logger.info(f"Reading context features from dir: {context_dir}")
+    
+            gamelogs_df = load_file(gamelogs_path, "csv")
+            players_df = load_file(players_path, "csv")
+            context_files = list(context_dir.glob("*.parquet"))
+    
+            if not context_files:
+                raise FileNotFoundError(f"No .parquet files found in {context_dir}")
+            context_df = pd.concat([pd.read_parquet(p) for p in context_files], ignore_index=True)
+    
+            logger.info(f"Loaded gamelogs: {gamelogs_df.shape[0]} rows")
+            logger.info(f"Loaded static players: {players_df.shape[0]} rows")
+            logger.info(f"Loaded context: {context_df.shape[0]} rows")
+    
+            # Merge step 1: gamelogs + players
+            merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+    
+            # Merge step 2: + context
+            merged_df = merged_df.merge(context_df, on=["player_id", "date"], how="left", validate="many_to_one")
+    
+            logger.info(f"Final merged row count (after join): {merged_df.shape[0]}")
+            merged_df.drop_duplicates(inplace=True)
+    
+            logger.info(f"Writing output to: {output_path}")
+            merged_df.to_parquet(output_path, index=False)
+            logger.info("combine_features.py completed successfully")
+    
+        except Exception as e:
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.exception(f"Error in combine_features.py: {e}")
+>           sys.exit(1)
+E           SystemExit: 1
+
+module_d.py:84: SystemExit
+----------------------------- Captured stderr call -----------------------------
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+------------------------------ Captured log call -------------------------------
+ERROR    combine_features:module_d.py:83 Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+______________________ test_row_count_expected_post_merge ______________________
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+>           cfg = load_config(args.config_path)
+
+module_d.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp3hapjjvh/test_config.yaml'
+
+    def load_config(path: str = "config.yaml") -> Config:
+        config_path = Path(path)
+        if not config_path.exists():
+            raise FileNotFoundError(f"Config file not found at: {path}")
+        with open(config_path, "r") as f:
+            raw = yaml.safe_load(f)
+>       return Config(**raw)
+E       pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+E       logs
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+E       pipeline
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+utils/config.py:60: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+test_env = (PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp3hapjjvh'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh...0gn/T/tmp3hapjjvh/test_config.yaml'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp3hapjjvh/output'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12de33eb0>
+
+    def test_row_count_expected_post_merge(test_env, monkeypatch):
+        tmp_dir, config_path, output_dir = test_env
+    
+        monkeypatch.setattr("sys.argv", [
+            "combine_features.py",
+            "--config-path", str(config_path),
+            "--overwrite-policy", "force"
+        ])
+    
+>       combine_main()
+
+tests/test_module_d.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+            cfg = load_config(args.config_path)
+            cfg = apply_cli_overrides(cfg)
+    
+            output_path = resolve_output_path(cfg.outputs.full_feature_set, args.overwrite_policy)
+            ensure_dir(output_path.parent)
+    
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.info("Starting combine_features.py")
+            logger.info(f"Config path: {args.config_path}")
+            logger.info(f"Overwrite policy: {args.overwrite_policy}")
+    
+            # Load data
+            gamelogs_path = Path(cfg.inputs.recent_gamelogs_csv).resolve()
+            players_path = Path(cfg.inputs.static_player_csv).resolve()
+            context_dir = Path(cfg.outputs.context_dir).resolve()
+    
+            logger.info(f"Reading gamelogs from: {gamelogs_path}")
+            logger.info(f"Reading static player info from: {players_path}")
+            logger.info(f"Reading context features from dir: {context_dir}")
+    
+            gamelogs_df = load_file(gamelogs_path, "csv")
+            players_df = load_file(players_path, "csv")
+            context_files = list(context_dir.glob("*.parquet"))
+    
+            if not context_files:
+                raise FileNotFoundError(f"No .parquet files found in {context_dir}")
+            context_df = pd.concat([pd.read_parquet(p) for p in context_files], ignore_index=True)
+    
+            logger.info(f"Loaded gamelogs: {gamelogs_df.shape[0]} rows")
+            logger.info(f"Loaded static players: {players_df.shape[0]} rows")
+            logger.info(f"Loaded context: {context_df.shape[0]} rows")
+    
+            # Merge step 1: gamelogs + players
+            merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+    
+            # Merge step 2: + context
+            merged_df = merged_df.merge(context_df, on=["player_id", "date"], how="left", validate="many_to_one")
+    
+            logger.info(f"Final merged row count (after join): {merged_df.shape[0]}")
+            merged_df.drop_duplicates(inplace=True)
+    
+            logger.info(f"Writing output to: {output_path}")
+            merged_df.to_parquet(output_path, index=False)
+            logger.info("combine_features.py completed successfully")
+    
+        except Exception as e:
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.exception(f"Error in combine_features.py: {e}")
+>           sys.exit(1)
+E           SystemExit: 1
+
+module_d.py:84: SystemExit
+----------------------------- Captured stderr call -----------------------------
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+------------------------------ Captured log call -------------------------------
+ERROR    combine_features:module_d.py:83 Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+___________________ test_duplicate_rows_detected_and_removed ___________________
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+>           cfg = load_config(args.config_path)
+
+module_d.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmp8pzlyn_j/dupe_config.yaml'
+
+    def load_config(path: str = "config.yaml") -> Config:
+        config_path = Path(path)
+        if not config_path.exists():
+            raise FileNotFoundError(f"Config file not found at: {path}")
+        with open(config_path, "r") as f:
+            raw = yaml.safe_load(f)
+>       return Config(**raw)
+E       pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+E       logs
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+E       pipeline
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+utils/config.py:60: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12e164190>
+
+    def test_duplicate_rows_detected_and_removed(monkeypatch):
+        tmp_dir = Path(tempfile.mkdtemp())
+        config_path = tmp_dir / "dupe_config.yaml"
+        output_dir = tmp_dir / "output"
+        context_dir = tmp_dir / "context"
+    
+        recent_gamelogs = tmp_dir / "gamelogs.csv"
+        static_player = tmp_dir / "players.csv"
+        context_parquet = context_dir / "context.parquet"
+    
+        output_dir.mkdir()
+        context_dir.mkdir()
+    
+        # Two identical rows = simulated duplication
+        pd.DataFrame({
+            "player_id": [1, 1],
+            "date": ["2024-08-01", "2024-08-01"],
+            "team_id": [100, 100],
+            "stat": [5, 5]
+        }).to_csv(recent_gamelogs, index=False)
+    
+        pd.DataFrame({
+            "player_id": [1],
+            "position": ["P"]
+        }).to_csv(static_player, index=False)
+    
+        pd.DataFrame({
+            "player_id": [1],
+            "date": ["2024-08-01"],
+            "ctx": [1.5]
+        }).to_parquet(context_parquet, index=False)
+    
+        with open(config_path, "w") as f:
+            f.write(f"""model: {{}}
+    paths: {{}}
+    cli: {{}}
+    flags: {{}}
+    inputs:
+      recent_gamelogs_csv: {str(recent_gamelogs)}
+      static_player_csv: {str(static_player)}
+    outputs:
+      context_dir: {str(context_dir)}
+      full_feature_set: {str(output_dir / 'full_feature_set.parquet')}
+    """)
+    
+        monkeypatch.setattr("sys.argv", [
+            "combine_features.py",
+            "--config-path", str(config_path),
+            "--overwrite-policy", "force"
+        ])
+    
+>       combine_main()
+
+tests/test_module_d.py:248: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+            cfg = load_config(args.config_path)
+            cfg = apply_cli_overrides(cfg)
+    
+            output_path = resolve_output_path(cfg.outputs.full_feature_set, args.overwrite_policy)
+            ensure_dir(output_path.parent)
+    
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.info("Starting combine_features.py")
+            logger.info(f"Config path: {args.config_path}")
+            logger.info(f"Overwrite policy: {args.overwrite_policy}")
+    
+            # Load data
+            gamelogs_path = Path(cfg.inputs.recent_gamelogs_csv).resolve()
+            players_path = Path(cfg.inputs.static_player_csv).resolve()
+            context_dir = Path(cfg.outputs.context_dir).resolve()
+    
+            logger.info(f"Reading gamelogs from: {gamelogs_path}")
+            logger.info(f"Reading static player info from: {players_path}")
+            logger.info(f"Reading context features from dir: {context_dir}")
+    
+            gamelogs_df = load_file(gamelogs_path, "csv")
+            players_df = load_file(players_path, "csv")
+            context_files = list(context_dir.glob("*.parquet"))
+    
+            if not context_files:
+                raise FileNotFoundError(f"No .parquet files found in {context_dir}")
+            context_df = pd.concat([pd.read_parquet(p) for p in context_files], ignore_index=True)
+    
+            logger.info(f"Loaded gamelogs: {gamelogs_df.shape[0]} rows")
+            logger.info(f"Loaded static players: {players_df.shape[0]} rows")
+            logger.info(f"Loaded context: {context_df.shape[0]} rows")
+    
+            # Merge step 1: gamelogs + players
+            merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+    
+            # Merge step 2: + context
+            merged_df = merged_df.merge(context_df, on=["player_id", "date"], how="left", validate="many_to_one")
+    
+            logger.info(f"Final merged row count (after join): {merged_df.shape[0]}")
+            merged_df.drop_duplicates(inplace=True)
+    
+            logger.info(f"Writing output to: {output_path}")
+            merged_df.to_parquet(output_path, index=False)
+            logger.info("combine_features.py completed successfully")
+    
+        except Exception as e:
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.exception(f"Error in combine_features.py: {e}")
+>           sys.exit(1)
+E           SystemExit: 1
+
+module_d.py:84: SystemExit
+----------------------------- Captured stderr call -----------------------------
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+------------------------------ Captured log call -------------------------------
+ERROR    combine_features:module_d.py:83 Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+__________________________ test_merge_key_null_check ___________________________
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+>           cfg = load_config(args.config_path)
+
+module_d.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpclwv76bh/test_config.yaml'
+
+    def load_config(path: str = "config.yaml") -> Config:
+        config_path = Path(path)
+        if not config_path.exists():
+            raise FileNotFoundError(f"Config file not found at: {path}")
+        with open(config_path, "r") as f:
+            raw = yaml.safe_load(f)
+>       return Config(**raw)
+E       pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+E       logs
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+E       pipeline
+E         Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+utils/config.py:60: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+test_env = (PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpclwv76bh'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh...0gn/T/tmpclwv76bh/test_config.yaml'), PosixPath('/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/tmpclwv76bh/output'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12de306d0>
+
+    def test_merge_key_null_check(test_env, monkeypatch):
+        tmp_dir, config_path, output_dir = test_env
+    
+        monkeypatch.setattr("sys.argv", [
+            "combine_features.py",
+            "--config-path", str(config_path),
+            "--overwrite-policy", "force"
+        ])
+    
+>       combine_main()
+
+tests/test_module_d.py:262: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--config-path", required=True, help="Path to config.yaml")
+        parser.add_argument("--overwrite-policy", choices=["error", "warn", "force"], default="error")
+        args = parser.parse_args()
+    
+        try:
+            cfg = load_config(args.config_path)
+            cfg = apply_cli_overrides(cfg)
+    
+            output_path = resolve_output_path(cfg.outputs.full_feature_set, args.overwrite_policy)
+            ensure_dir(output_path.parent)
+    
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.info("Starting combine_features.py")
+            logger.info(f"Config path: {args.config_path}")
+            logger.info(f"Overwrite policy: {args.overwrite_policy}")
+    
+            # Load data
+            gamelogs_path = Path(cfg.inputs.recent_gamelogs_csv).resolve()
+            players_path = Path(cfg.inputs.static_player_csv).resolve()
+            context_dir = Path(cfg.outputs.context_dir).resolve()
+    
+            logger.info(f"Reading gamelogs from: {gamelogs_path}")
+            logger.info(f"Reading static player info from: {players_path}")
+            logger.info(f"Reading context features from dir: {context_dir}")
+    
+            gamelogs_df = load_file(gamelogs_path, "csv")
+            players_df = load_file(players_path, "csv")
+            context_files = list(context_dir.glob("*.parquet"))
+    
+            if not context_files:
+                raise FileNotFoundError(f"No .parquet files found in {context_dir}")
+            context_df = pd.concat([pd.read_parquet(p) for p in context_files], ignore_index=True)
+    
+            logger.info(f"Loaded gamelogs: {gamelogs_df.shape[0]} rows")
+            logger.info(f"Loaded static players: {players_df.shape[0]} rows")
+            logger.info(f"Loaded context: {context_df.shape[0]} rows")
+    
+            # Merge step 1: gamelogs + players
+            merged_df = gamelogs_df.merge(players_df, on="player_id", how="left", validate="many_to_one")
+    
+            # Merge step 2: + context
+            merged_df = merged_df.merge(context_df, on=["player_id", "date"], how="left", validate="many_to_one")
+    
+            logger.info(f"Final merged row count (after join): {merged_df.shape[0]}")
+            merged_df.drop_duplicates(inplace=True)
+    
+            logger.info(f"Writing output to: {output_path}")
+            merged_df.to_parquet(output_path, index=False)
+            logger.info("combine_features.py completed successfully")
+    
+        except Exception as e:
+            logger = get_rotating_logger("combine_features", log_dir="logs")
+            logger.exception(f"Error in combine_features.py: {e}")
+>           sys.exit(1)
+E           SystemExit: 1
+
+module_d.py:84: SystemExit
+----------------------------- Captured stderr call -----------------------------
+2025-06-13 20:13:21 | ERROR | Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+------------------------------ Captured log call -------------------------------
+ERROR    combine_features:module_d.py:83 Error in combine_features.py: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_d.py", line 36, in main
+    cfg = load_config(args.config_path)
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'model': {}, 'paths': {}...l_feature_set.parquet'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+__________________________ test_overwrite_policy_warn __________________________
+
+tmp_path = PosixPath('/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_overwrite_policy_warn0')
+caplog = <_pytest.logging.LogCaptureFixture object at 0x12e1716f0>
+
+    def test_overwrite_policy_warn(tmp_path, caplog):
+        output_file = tmp_path / "test.parquet"
+        df = pd.DataFrame({"player_id": [1], "date": ["2024-07-01"], "final_prediction": [0.8]})
+        df.to_parquet(output_file)
+        with caplog.at_level("WARNING", logger="overwrite_policy"):  # ✅ capture the correct logger
+            resolved = resolve_output_path(output_file, "warn")
+>           assert "already exists" in caplog.text
+E           AssertionError: assert 'already exists' in 'WARNING  cli_utils:cli_utils.py:114 /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_overwrite_policy_warn0/test.parquet exists — overwriting (policy=warn)\n'
+E            +  where 'WARNING  cli_utils:cli_utils.py:114 /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_overwrite_policy_warn0/test.parquet exists — overwriting (policy=warn)\n' = <_pytest.logging.LogCaptureFixture object at 0x12e1716f0>.text
+
+tests/test_module_g.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2025-06-13 20:13:21 | WARNING | /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_overwrite_policy_warn0/test.parquet exists — overwriting (policy=warn)
+------------------------------ Captured log call -------------------------------
+WARNING  cli_utils:cli_utils.py:114 /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_overwrite_policy_warn0/test.parquet exists — overwriting (policy=warn)
+_________________________________ test_cli_run _________________________________
+
+tmp_path = PosixPath('/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_cli_run1')
+
+    def test_cli_run(tmp_path):
+        config_path = tmp_path / "config.yaml"
+        model_path = tmp_path / "dummy_model.joblib"
+        features_path = tmp_path / "context.parquet"
+        output_path = tmp_path / "predictions.parquet"
+    
+        # ✅ Updated dummy config using model_predictions
+        config_path.write_text(f"""
+    inputs:
+      context_features: {features_path}
+    outputs:
+      model_predictions: {output_path}
+    model_path: {model_path}
+    required_features: ["x1", "x2"]
+    overwrite_policy: force
+    """)
+    
+        # Dummy context data
+        df = pd.DataFrame({"x1": [1, 2], "x2": [3, 4]})
+        df.to_parquet(features_path)
+    
+        # Dump a real sklearn DummyRegressor model with 2-feature input
+        model = DummyRegressor(strategy="constant", constant=7)
+        model.fit([[0, 0], [1, 1]], [0, 1])  # match 2-feature input
+        joblib.dump(model, model_path)
+    
+        # Run subprocess
+        result = subprocess.run([
+            "python", "module_i.py",
+            "--config-path", str(config_path),
+            "--set", "cli.overwrite_policy=force"
+        ], capture_output=True, text=True)
+    
+        print("STDOUT:\n", result.stdout)
+        print("STDERR:\n", result.stderr)
+    
+>       assert result.returncode == 0
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['python', 'module_i.py', '--config-path', '/private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-52/test_cli_run1/config.yaml', '--set', 'cli.overwrite_policy=force'], returncode=1, stdout='❌ Unhandled exception:\n Traceback (most recent call last):\n  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>\n    main()\n  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main\n    cfg = load_config(args.config_path or "config.yaml")\n  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config\n    return Config(**raw)\n  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__\n    self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 2 validation errors for Config\nlogs\n  Field required [type=missing, input_value={\'inputs\': {\'context_feat...rwrite_policy\': \'force\'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.6/v/missing\npipeline\n  Field required [type=missing, input_value={\'inputs\': {\'context_fe...ning by setting `model_config[\'protected_namespaces\'] = ()`.\n  warnings.warn(\n2025-06-13 20:13:22 | ERROR | ❌ Unhandled exception:\nTraceback (most recent call last):\n  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>\n    main()\n  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main\n    cfg = load_config(args.config_path or "config.yaml")\n  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config\n    return Config(**raw)\n  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__\n    self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 2 validation errors for Config\nlogs\n  Field required [type=missing, input_value={\'inputs\': {\'context_feat...rwrite_policy\': \'force\'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.6/v/missing\npipeline\n  Field required [type=missing, input_value={\'inputs\': {\'context_feat...rwrite_policy\': \'force\'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.6/v/missing\n\n').returncode
+
+tests/test_module_i.py:79: AssertionError
+----------------------------- Captured stdout call -----------------------------
+STDOUT:
+ ❌ Unhandled exception:
+ Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main
+    cfg = load_config(args.config_path or "config.yaml")
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+
+STDERR:
+ /Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/_internal/_fields.py:151: UserWarning: Field "model_predictions" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+  warnings.warn(
+2025-06-13 20:13:22 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 76, in main
+    cfg = load_config(args.config_path or "config.yaml")
+  File "/Users/lukearney/Full MLB Project/utils/config.py", line 60, in load_config
+    return Config(**raw)
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 171, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Config
+logs
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+pipeline
+  Field required [type=missing, input_value={'inputs': {'context_feat...rwrite_policy': 'force'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.6/v/missing
+
+
+=============================== warnings summary ===============================
+venv_mlb/lib/python3.10/site-packages/pydantic/_internal/_fields.py:151
+  /Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/_internal/_fields.py:151: UserWarning: Field "model_predictions" has conflict with protected namespace "model_".
+  
+  You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_module_b.py::test_download_static_csvs_success - AttributeE...
+FAILED tests/test_module_b.py::test_download_static_csvs_overwrite_policy_warn
+FAILED tests/test_module_b.py::test_download_static_csvs_failed_download - At...
+FAILED tests/test_module_d.py::test_combine_success - SystemExit: 1
+FAILED tests/test_module_d.py::test_schema_mismatch_columns - SystemExit: 1
+FAILED tests/test_module_d.py::test_row_count_expected_post_merge - SystemExi...
+FAILED tests/test_module_d.py::test_duplicate_rows_detected_and_removed - Sys...
+FAILED tests/test_module_d.py::test_merge_key_null_check - SystemExit: 1
+FAILED tests/test_module_g.py::test_overwrite_policy_warn - AssertionError: a...
+FAILED tests/test_module_i.py::test_cli_run - assert 1 == 0
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Users/lukearney/.pyenv/versions/3.10.13/lib/python3.10/threading.py:320: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+============= 10 failed, 54 passed, 1 warning in 237.88s (0:03:57) =============
