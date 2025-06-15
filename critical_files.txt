@@ -1,3 +1,6 @@
+# ───── MLB PIPELINE — TOP 20 CRITICAL FILES ─────
+
+# 🔁 Execution Orchestrator + Core Modules (12)
 pipeline.py
 module_a.py
 module_b.py
@@ -10,11 +13,17 @@ module_h.py
 module_i.py
 module_k.py
 module_l.py
+
+# ⚙️ Canonical Config & Helpers (4)
 config.yaml
-README_pipeline.md
-Global Architecture & Design Spec.txt
-# ≡ƒº¼ MLB Pipeline Canonical Module Build Prompt.txt
-00_pipeline_quality_checklist.md
-2024-06-13_pip_snapshot.txt
+utils/config.py
+utils/cli_utils.py
+utils/logging_utils.py
+
+# 🧪 Logs & Output Validation (2)
 logs/test_logger.log
 test_output.txt
+
+# 📚 Architecture & Build Contract (2)
+Global Architecture & Design Spec.txt
+MLB Pipeline Canonical Module Build Prompt.txt
