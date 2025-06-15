@@ -80,3 +80,59 @@
 2025-06-13 21:51:28 | INFO | 
 📊 Pipeline Summary:
 2025-06-13 21:51:28 | INFO |  - Module B: SUCCESS
+2025-06-13 21:52:29 | INFO | 🚀 Starting pipeline with config:
+2025-06-13 21:52:29 | INFO | logs={'pipeline_log': 'logs/pipeline.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='outputs/predictions/final.parquet', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True} rolling_windows={'windows': [{'days': 7, 'stats': ['hits', 'HR', 'RBI', 'SB']}, {'days': 30, 'stats': ['hits', 'HR', 'RBI', 'SB', 'BB', 'K']}]} logging={'max_bytes': 5000000, 'backup_count': 3, 'level': 'INFO'}
+2025-06-13 21:52:29 | INFO | 🧩 Final module sequence: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L']
+2025-06-13 21:52:29 | INFO | ▶️  Running module A…
+2025-06-13 21:52:29 | INFO | ▶️  Running module B…
+2025-06-13 21:52:29 | WARNING | Import failed for B: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:29 | ERROR | Module B failed via subprocess.
+2025-06-13 21:52:29 | INFO | ▶️  Running module C…
+2025-06-13 21:52:29 | WARNING | Import failed for C: module 'module_c' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 21:52:30 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:30 | ERROR | Module C failed via subprocess.
+2025-06-13 21:52:30 | INFO | ▶️  Running module D…
+2025-06-13 21:52:30 | WARNING | Import failed for D: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:30 | ERROR | Module D failed via subprocess.
+2025-06-13 21:52:30 | INFO | ▶️  Running module E…
+2025-06-13 21:52:30 | WARNING | Import failed for E: module 'module_e' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 21:52:31 | ERROR | Module E failed via subprocess.
+2025-06-13 21:52:31 | INFO | ▶️  Running module F…
+2025-06-13 21:52:31 | WARNING | Import failed for F: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:31 | ERROR | Module A failed via subprocess.
+2025-06-13 21:52:31 | INFO | ▶️  Running module G…
+2025-06-13 21:52:31 | WARNING | Import failed for G: module 'module_g' has no attribute 'main'. Using subprocess fallback.
+2025-06-13 21:52:32 | ERROR | Module F failed via subprocess.
+2025-06-13 21:52:32 | INFO | ▶️  Running module H…
+2025-06-13 21:52:32 | WARNING | Import failed for H: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:32 | ERROR | Module G failed via subprocess.
+2025-06-13 21:52:32 | INFO | ▶️  Running module I…
+2025-06-13 21:52:32 | WARNING | Import failed for I: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:32 | INFO | ✅ Module H completed in 0.61s
+2025-06-13 21:52:32 | INFO | ▶️  Running module K…
+2025-06-13 21:52:32 | WARNING | Import failed for K: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:32 | ERROR | Module I failed via subprocess.
+2025-06-13 21:52:33 | INFO | ▶️  Running module L…
+2025-06-13 21:52:33 | WARNING | Import failed for L: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-13 21:52:33 | INFO | ✅ Module K completed in 0.72s
+2025-06-13 21:52:33 | ERROR | Module L failed via subprocess.
+2025-06-14 22:56:47 | INFO | 🚀 Starting pipeline with config:
+2025-06-14 22:56:47 | INFO | version='2025-06-14' environment='dev' metadata=Metadata(project='mlb-player-pipeline', owner='luke.arney', team='mlb-data-engineering', tags=['mlb', 'player-prediction', 'xgboost', 'llm'], release_channel='alpha', notify_on_success=False, notify_on_failure=True, notify_emails=['alerts@example.com']) logging=LoggingConfig(dir='logs', level='INFO', max_bytes=5000000, backup_count=3, log_to_stdout=True, format='[{asctime}] | {levelname:^8} | {name} | {message}', datefmt='%Y-%m-%d %H:%M:%S', style='{') cli=CLIConfig(config_path='config.yaml', modules='A,B,C,D,E,F,G,H,I,J,K,L', concurrency=2, log_level='INFO', overwrite_policy='warn', debug=False) pipeline=PipelineConfig(concurrency=2, continue_on_failure=True, fail_fast=False, strict_schema=True, retry_failed_modules=False, max_retry_attempts=1) overwrite_policy='warn' inputs=InputsConfig(seasons=[2022, 2023], gamelogs_source='statsapi', recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', context_features='', static_csvs=[StaticCSV(name='teams', url=Url('https://example.com/teams.csv')), StaticCSV(name='stadiums', url=Url('https://example.com/stadiums.csv'))]) outputs=OutputsConfig(gamelogs_dir='outputs/gamelogs/', static_dir='outputs/static/', context_dir='outputs/context/', merged_dir='outputs/merged/', starters_dir='outputs/starters/', full_feature_set='outputs/features/full_feature_set.parquet', consolidated_predictions='outputs/predictions/consolidated_predictions.parquet', model_dir='outputs/models/', model_predictions='outputs/predictions/final.parquet', final_preds_csv='outputs/predictions/final/mlb_predictions.csv', final_preds_txt='outputs/predictions/final/mlb_predictions.txt', output_dir='outputs/llm', tmp_dir='outputs/tmp/', archive_dir='archive/', root='') rolling_windows=RollingWindowConfig(windows=[RollingWindowSpec(days=7, stats=['hits', 'HR', 'RBI', 'SB']), RollingWindowSpec(days=30, stats=['hits', 'HR', 'RBI', 'SB', 'BB', 'K'])]) model=ModelConfig(model_type='xgboost', path='outputs/models/latest_model.pkl', params=ModelParams(max_depth=6, n_estimators=100, learning_rate=0.1), use_cross_validation=True, cross_val_folds=5, early_stopping_rounds=15, random_state=42, eval_metric='rmse') llm=LLMConfig(endpoint=Url('http://localhost:8000/generate'), prompt_template='templates/prompt_v2.j2', model='gpt-llm-v2', temperature=0.7, max_tokens=300, retry_on_error=True, max_retries=2, delay_between_retries_sec=1.5, enable_streaming=False) flags=FlagsConfig(use_cached_data=True, save_predictions=True, validate_config_keys=True, profile_modules=False, dry_run=False, time_each_module=True, mock_llm=False) required_features=[] paths={}
+2025-06-14 22:56:47 | INFO | 🧩 Final module sequence: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+2025-06-14 22:56:47 | INFO | ▶️  Running module A…
+2025-06-14 22:56:49 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-14 22:56:50 | ERROR | Module A failed via subprocess.
+2025-06-14 22:56:50 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-14 22:56:50 | INFO | 
+📊 Pipeline Summary:
+2025-06-14 22:56:50 | INFO |  - Module A: FAILED
+2025-06-14 22:58:11 | INFO | 🚀 Starting pipeline with config:
+2025-06-14 22:58:11 | INFO | version='2025-06-14' environment='dev' metadata=Metadata(project='mlb-player-pipeline', owner='luke.arney', team='mlb-data-engineering', tags=['mlb', 'player-prediction', 'xgboost', 'llm'], release_channel='alpha', notify_on_success=False, notify_on_failure=True, notify_emails=['alerts@example.com']) logging=LoggingConfig(dir='logs', level='INFO', max_bytes=5000000, backup_count=3, log_to_stdout=True, format='[{asctime}] | {levelname:^8} | {name} | {message}', datefmt='%Y-%m-%d %H:%M:%S', style='{') cli=CLIConfig(config_path='config.yaml', modules='A,B,C,D,E,F,G,H,I,J,K,L', concurrency=2, log_level='INFO', overwrite_policy='warn', debug=False) pipeline=PipelineConfig(concurrency=3, continue_on_failure=True, fail_fast=False, strict_schema=True, retry_failed_modules=False, max_retry_attempts=1) overwrite_policy='warn' inputs=InputsConfig(seasons=[2022, 2023], gamelogs_source='statsapi', recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', context_features='', static_csvs=[StaticCSV(name='teams', url=Url('https://example.com/teams.csv')), StaticCSV(name='stadiums', url=Url('https://example.com/stadiums.csv'))]) outputs=OutputsConfig(gamelogs_dir='outputs/gamelogs/', static_dir='outputs/static/', context_dir='outputs/context/', merged_dir='outputs/merged/', starters_dir='outputs/starters/', full_feature_set='outputs/features/full_feature_set.parquet', consolidated_predictions='outputs/predictions/consolidated_predictions.parquet', model_dir='outputs/models/', model_predictions='outputs/predictions/final.parquet', final_preds_csv='outputs/predictions/final/mlb_predictions.csv', final_preds_txt='outputs/predictions/final/mlb_predictions.txt', output_dir='outputs/llm', tmp_dir='outputs/tmp/', archive_dir='archive/', root='') rolling_windows=RollingWindowConfig(windows=[RollingWindowSpec(days=7, stats=['hits', 'HR', 'RBI', 'SB']), RollingWindowSpec(days=30, stats=['hits', 'HR', 'RBI', 'SB', 'BB', 'K'])]) model=ModelConfig(model_type='xgboost', path='outputs/models/latest_model.pkl', params=ModelParams(max_depth=6, n_estimators=100, learning_rate=0.1), use_cross_validation=True, cross_val_folds=5, early_stopping_rounds=15, random_state=42, eval_metric='rmse') llm=LLMConfig(endpoint=Url('http://localhost:8000/generate'), prompt_template='templates/prompt_v2.j2', model='gpt-llm-v2', temperature=0.7, max_tokens=300, retry_on_error=True, max_retries=2, delay_between_retries_sec=1.5, enable_streaming=False) flags=FlagsConfig(use_cached_data=True, save_predictions=True, validate_config_keys=True, profile_modules=False, dry_run=False, time_each_module=True, mock_llm=False) required_features=[] paths={}
+2025-06-14 22:58:11 | INFO | 🧩 Final module sequence: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+2025-06-14 22:58:11 | INFO | ▶️  Running module A…
+2025-06-14 22:58:11 | WARNING | Import failed for A: main() takes 0 positional arguments but 1 was given. Using subprocess fallback.
+2025-06-14 22:58:12 | ERROR | Module A failed via subprocess.
+2025-06-14 22:58:12 | WARNING | ⛔ Pipeline halted due to failure.
+2025-06-14 22:58:12 | INFO | 
+📊 Pipeline Summary:
+2025-06-14 22:58:12 | INFO |  - Module A: FAILED

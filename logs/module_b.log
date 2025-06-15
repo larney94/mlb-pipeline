@@ -42,3 +42,11 @@ TypeError: 'Config' object is not subscriptable
 2025-06-13 21:51:26 | WARNING | Skipping existing file due to overwrite policy: /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_download_static_csvs_over0/static/test_dataset.csv
 2025-06-13 21:51:26 | INFO | Downloading https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv → /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_download_static_csvs_fail0/static/test_dataset.csv
 2025-06-13 21:51:26 | ERROR | Failed to download https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv: Download error
+2025-06-13 21:52:29 | INFO | Starting Module B with config: config.yaml
+2025-06-13 21:52:29 | ERROR | Module B failed: 'Config' object is not subscriptable
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_b.py", line 66, in main
+    download_static_csvs(cfg)
+  File "/Users/lukearney/Full MLB Project/module_b.py", line 13, in download_static_csvs
+    static_dir = Path(cfg["outputs"]["static_dir"]).resolve()
+TypeError: 'Config' object is not subscriptable

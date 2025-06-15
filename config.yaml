@@ -1,27 +1,59 @@
 # config.yaml
 # ────────────────────────────────────────────────
 # Canonical Configuration for MLB Prediction Pipeline
-# Supports modules A–L, CLI overrides, overwrite policy
+# Exhaustively hardened to support all modules A–L
 # ────────────────────────────────────────────────
 
-logs:
-  pipeline_log: logs/pipeline.log
+version: "2025-06-14"
+environment: dev  # dev | test | prod
+
+metadata:
+  project: mlb-player-pipeline
+  owner: luke.arney
+  team: mlb-data-engineering
+  tags: [mlb, player-prediction, xgboost, llm]
+  release_channel: alpha  # alpha | beta | stable
+  notify_on_success: false
+  notify_on_failure: true
+  notify_emails: ["alerts@example.com"]
+
+logging:
+  dir: logs
+  level: INFO  # DEBUG | INFO | WARNING | ERROR
+  max_bytes: 5000000
+  backup_count: 3
+  log_to_stdout: true
+  format: "[{asctime}] | {levelname:^8} | {name} | {message}"
+  datefmt: "%Y-%m-%d %H:%M:%S"
+  style: "{"
+
+cli:
+  config_path: config.yaml
+  modules: A,B,C,D,E,F,G,H,I,J,K,L
+  concurrency: 2
+  log_level: INFO
+  overwrite_policy: warn
+  debug: false
 
 pipeline:
   concurrency: 2
   continue_on_failure: true
+  fail_fast: false
+  strict_schema: true
+  retry_failed_modules: false
+  max_retry_attempts: 1
 
-overwrite_policy: warn
+overwrite_policy: warn  # fallback if CLI not used
 
 inputs:
   seasons: [2022, 2023]
+  gamelogs_source: statsapi
   recent_gamelogs_csv: outputs/gamelogs/recent_gamelogs.csv
   static_player_csv: outputs/static/static_player_metadata.csv
   static_team_csv: outputs/static/static_team_metadata.csv
   true_lines_dir: outputs/true_lines
   recent_predictions_dir: outputs/predictions/recent
   combined_preds_dir: outputs/predictions/combined
-  gamelogs_source: statsapi
   context_features: ""
   static_csvs:
     - name: teams
@@ -39,8 +71,11 @@ outputs:
   consolidated_predictions: outputs/predictions/consolidated_predictions.parquet
   model_dir: outputs/models/
   model_predictions: outputs/predictions/final.parquet
-  root: outputs
-  logs_dir: logs/
+  final_preds_csv: outputs/predictions/final/mlb_predictions.csv
+  final_preds_txt: outputs/predictions/final/mlb_predictions.txt
+  output_dir: outputs/llm
+  tmp_dir: outputs/tmp/
+  archive_dir: archive/
 
 rolling_windows:
   windows:
@@ -51,24 +86,36 @@ rolling_windows:
 
 model:
   model_type: xgboost
+  path: outputs/models/latest_model.pkl
   params:
     max_depth: 6
     n_estimators: 100
     learning_rate: 0.1
+  use_cross_validation: true
+  cross_val_folds: 5
+  early_stopping_rounds: 15
   random_state: 42
+  eval_metric: rmse
 
-cli:
-  overwrite_policy: safe  # options: safe, force, skip
-  log_level: INFO
-
-logging:
-  max_bytes: 5000000
-  backup_count: 3
-  level: INFO
+llm:
+  endpoint: http://localhost:8000/generate
+  prompt_template: templates/prompt_v2.j2
+  model: gpt-llm-v2
+  temperature: 0.7
+  max_tokens: 300
+  retry_on_error: true
+  max_retries: 2
+  delay_between_retries_sec: 1.5
+  enable_streaming: false
 
 flags:
   use_cached_data: true
   save_predictions: true
+  validate_config_keys: true
+  profile_modules: false
+  dry_run: false
+  time_each_module: true
+  mock_llm: false
 
-required_features: []
-paths: {}
+required_features: []  # Populated by Module G if needed
+paths: {}  # Runtime-injected if needed

@@ -14,3 +14,4 @@
 2025-06-13 21:06:48 | INFO | Module E – Fetch Starters – started
 2025-06-13 21:51:26 | INFO | Wrote 1 starter records to tests/tmp_test_starters/starters_2024-06-14.csv
 2025-06-13 21:51:26 | WARNING | File tests/tmp_test_starters/starters_2024-06-14.csv exists. Skipping due to overwrite_policy=warn.
+2025-06-13 21:52:31 | INFO | Module E – Fetch Starters – started

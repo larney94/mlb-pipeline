@@ -266,3 +266,13 @@ ValueError: Invalid overwrite policy: safe
 2025-06-13 21:51:27 | INFO | ✅ Context features loaded: 2 rows  2 cols
 2025-06-13 21:51:28 | INFO | ✅ Predictions generated: 2 rows
 2025-06-13 21:51:28 | INFO | 📦 Predictions written to /private/var/folders/wm/9b2tlrgx33n81jh05fcj5mfm0000gn/T/pytest-of-lukearney/pytest-59/test_cli_run1/predictions.parquet
+2025-06-13 21:52:32 | INFO | 🚀 Starting module_i: run_mlb_model.py
+2025-06-13 21:52:32 | INFO | Active config: logs={'pipeline_log': 'logs/pipeline.log'} inputs=InputsConfig(recent_gamelogs_csv='outputs/gamelogs/recent_gamelogs.csv', static_player_csv='outputs/static/static_player_metadata.csv', static_team_csv='outputs/static/static_team_metadata.csv', true_lines_dir='outputs/true_lines', recent_predictions_dir='outputs/predictions/recent', combined_preds_dir='outputs/predictions/combined', gamelogs_source='statsapi', context_features='') outputs=OutputsConfig(context_dir='outputs/context/', full_feature_set='outputs/features/full_feature_set.parquet', model_predictions='outputs/predictions/final.parquet', root='outputs') pipeline={'concurrency': 2, 'continue_on_failure': True} overwrite_policy='warn' model_path='' required_features=[] model={'model_type': 'xgboost', 'params': {'max_depth': 6, 'n_estimators': 100, 'learning_rate': 0.1}, 'random_state': 42} paths={} cli={'overwrite_policy': 'safe', 'log_level': 'INFO'} flags={'use_cached_data': True, 'save_predictions': True} rolling_windows={'windows': [{'days': 7, 'stats': ['hits', 'HR', 'RBI', 'SB']}, {'days': 30, 'stats': ['hits', 'HR', 'RBI', 'SB', 'BB', 'K']}]} logging={'max_bytes': 5000000, 'backup_count': 3, 'level': 'INFO'}
+2025-06-13 21:52:32 | ERROR | ❌ Unhandled exception:
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 141, in <module>
+    main()
+  File "/Users/lukearney/Full MLB Project/module_i.py", line 106, in main
+    raise ValueError(f"Invalid overwrite policy: {overwrite}")
+ValueError: Invalid overwrite policy: safe
+

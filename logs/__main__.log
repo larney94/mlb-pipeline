@@ -202,3 +202,17 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for Config
 inputs
   Field required [type=missing, input_value={'true_line_sources': {'p...rwrite_policy': 'force'}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.6/v/missing
+2025-06-13 21:52:32 | ERROR | An error occurred while generating context features.
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_h.py", line 38, in main
+    input_path = Path(cfg.inputs.consolidated_data).resolve()
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'InputsConfig' object has no attribute 'consolidated_data'
+2025-06-13 21:52:33 | ERROR | Fatal error in module_k.py
+Traceback (most recent call last):
+  File "/Users/lukearney/Full MLB Project/module_k.py", line 109, in main
+    out_dir = Path(cfg.outputs.dir).resolve() / "true_lines"
+  File "/Users/lukearney/Full MLB Project/venv_mlb/lib/python3.10/site-packages/pydantic/main.py", line 767, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OutputsConfig' object has no attribute 'dir'
